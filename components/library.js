@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import DefaultRating from 'ratingTextless';
+import HalfRating from './rating';
 
 const albums = [
   { src: '/albums/lana.png', alt: 'Lana Del Rey' },
@@ -12,7 +12,7 @@ const albums = [
 
 const ImageRow = () => {
   return (
-    <div className="w-full overflow-x-auto py-6 px-4">
+    <div className="w-full mt-4 overflow-x-auto py-6 px-4 bg-neutral-950">
       <div className="mx-auto flex gap-6 justify-center w-fit">
         {albums.map((album, index) => (
           <div key={index} className="flex-shrink-0 flex flex-col items-center">
@@ -23,8 +23,10 @@ const ImageRow = () => {
               height={200}
               className="rounded-lg object-cover"
             />
+            <div className="mt-4"> {/* This adds spacing between the image and stars */}
+              <HalfRating />
+            </div>
             <div className="mt-2">
-              <DefaultRating />
             </div>
           </div>
         ))}
