@@ -18,10 +18,10 @@ export default function CTA() {
             </svg>
             <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-                Boost your productivity. Start using our app today.
+                Join a community made for those who love music.
               </h2>
               <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-                Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
+                The world is dying to hear what you listen to.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                 <a
@@ -31,7 +31,7 @@ export default function CTA() {
                   Get started
                 </a>
                 <a href="#" className="text-sm/6 font-semibold text-white">
-                  Learn more <span aria-hidden="true">→</span>
+                  Log in <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>

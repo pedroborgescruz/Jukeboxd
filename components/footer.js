@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
       <hr className="my-8 border-blue-gray-50" />
       <p className="text-center font-normal text-gray-600">
-        &copy; {currentYear} <a href="https://material-tailwind.com/">Material Tailwind</a>.
+        &copy; {currentYear} <a href="https://material-tailwind.com/">Jukeboxd</a>.
       </p>
     </footer>
   );
