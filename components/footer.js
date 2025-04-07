@@ -2,8 +2,8 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white p-8">
-      <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
+    <footer style = {{backgroundColor: "#19121f"}} className="w-full p-8">
+      <div style = {{backgroundColor: "#19121f"}} className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 text-center md:justify-between">
         <img 
           src="https://docs.material-tailwind.com/img/logo-ct-dark.png" 
           alt="logo-ct" 
@@ -14,7 +14,8 @@ export default function Footer() {
             <li key={item}>
               <a
                 href="#"
-                className="font-normal text-gray-600 transition-colors hover:text-blue-500 focus:text-blue-500"
+                style = {{color: "#ded4df"}}
+                className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
               >
                 {item}
               </a>
@@ -23,9 +24,10 @@ export default function Footer() {
         </ul>
       </div>
       <hr className="my-8 border-blue-gray-50" />
-      <p className="text-center font-normal text-gray-600">
+      <p style = {{color: "#ded4df"}} className="text-center font-normal">
         &copy; {currentYear} <a href="https://material-tailwind.com/">Jukeboxd</a>.
       </p>
+
     </footer>
   );
 }

@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <ImageRow />
       <AppDemo />
+      <ImageRow />
       <FeatureSection />
       <CTA />
       <Footer />

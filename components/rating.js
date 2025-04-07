@@ -9,10 +9,10 @@ export default function HalfRating() {
     name="size-small" 
     defaultValue={0}
     size="small"
-    style={{ color: '#cbf203' }} // Tailwind's yellow-400
+    style={{ color: '#cbf203' }} 
     sx={{
       '& .MuiRating-iconEmpty': {
-        color: '#bbb', // Light gray for unfilled stars
+        color: '#ded4df', // For unfilled stars
       },
     }}
     />
