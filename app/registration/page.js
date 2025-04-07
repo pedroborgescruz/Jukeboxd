@@ -1,90 +1,93 @@
-export default function Registration() {
-    return (
-      <>
-        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <a href="/">
-              <img
-                alt="Jukeboxd"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                className="mx-auto h-10 w-auto"
-              />
-            </a>
-            <h2 className="mt-10 text-center text-2xl/9 tracking-tight text-jukeboxd">
-              Join Jukeboxd
-            </h2>
-          </div>
-      
-          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
-              <div>
-                <label htmlFor="email" className="block text-sm/6 font-medium text-jukeboxd">
-                  Email address
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
-                </div>
-              </div>
+"use client"
 
-              <div>
-                <label htmlFor="username" className="block text-sm/6 font-medium text-jukeboxd">
-                  Username
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="username"
-                    name="username"
-                    type="username"
-                    required
-                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
-                </div>
-              </div>
-  
-              <div>
-                <div className="flex items-center justify-between">
-                  <label htmlFor="password" className="block text-sm/6 font-medium text-jukeboxd">
-                    Password
-                  </label>
-                </div>
-                <div className="mt-2">
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    required
-                    autoComplete="current-password"
-                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
-                </div>
-              </div>
-  
-              <div>
-                <button
-                  type="submit"
-                  className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Sign up
-                </button>
-              </div>
-            </form>
-  
-            <p className="mt-10 text-center text-sm/6 text-jukeboxd">
-              Already a member?{' '}
-              <a href="/login" className="font-semibold primary-jukeboxd">
-                Sign in.
-              </a>
-            </p>
+import { useState } from "react";
+
+export default function Registration() {
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    fetch('https://localhost:3000/api/register', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, username, password })});
+  };
+
+  return (
+    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <a href="/">
+          <img
+            alt="Jukeboxd"
+            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+            className="mx-auto h-10 w-auto"
+          />
+        </a>
+        <h2 className="mt-10 text-center text-2xl/9 tracking-tight text-jukeboxd">
+          Join Jukeboxd
+        </h2>
+      </div>
+
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* EMAIL */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-jukeboxd">
+              Email address
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="mt-2 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
+            />
           </div>
-        </div>
-      </>
-    )
-  }
-  
+
+          {/* USERNAME */}
+          <div>
+            <label htmlFor="username" className="block text-sm font-medium text-jukeboxd">
+              Username
+            </label>
+            <input
+              id="username"
+              name="username"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="mt-2 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
+            />
+          </div>
+
+          {/* PASSWORD */}
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-jukeboxd">
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="mt-2 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full rounded-md bg-primary px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-primary-dark"
+          >
+            Sign up
+          </button>
+
+        </form>
+      </div>
+    </div>
+  );
+}
