@@ -1,8 +1,8 @@
 export default function appDemo() {
     return (
-      <div className="bg-black py-24 sm:py-32">
+      <div className="py-24 sm:py-32" style = {{backgroundColor: "#13091c"}}>
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="text-center text-base/7 font-semibold text-indigo-600">A social network for music lovers</h2>
+          <h2 style = {{color: "#6600ff"}} className="text-center text-base/7 font-semibold">A social network for music lovers</h2>
           <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
             Everything you need for your music passion
           </p>

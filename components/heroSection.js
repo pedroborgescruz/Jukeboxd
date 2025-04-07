@@ -46,7 +46,7 @@ export default function heroSection() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-white">
+              <a key={item.name} href={item.href} className="text-sm/6 text-white">
                 {item.name}
               </a>
             ))}
@@ -136,7 +136,7 @@ export default function heroSection() {
               </a>
               <a 
                 href="#" 
-                className="text-sm/6 font-semibold text-white">
+                className="text-sm/6 text-white">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
