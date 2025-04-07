@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: "Manrope", sans-serif;
 }
+
+.bg-jukeboxd {
+  background: #19121f;
+}
+
+.bg-primary {
+  background: #6600ff;
+}
+
+.bg-primary:hover {
+  background: #8431ff;
+}
+
+.text-jukeboxd {
+  color: #ded4df;
+}
+
+.accent-jukeboxd {
+  color: #cbf203;
+}
+
+.primary-jukeboxd {
+  color: #6600ff;
+}
