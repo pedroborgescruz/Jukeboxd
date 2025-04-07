@@ -5,11 +5,16 @@ import StarIcon from '@mui/icons-material/Star';
 
 export default function HalfRating() {
   return (
-    <Rating
-      name="half-rating"
-      defaultValue={2.5}
-      precision={0.5}
-      style={{ color: '#facc15' }} // Tailwind's yellow-400
+    <Rating 
+    name="size-small" 
+    defaultValue={0}
+    size="small"
+    style={{ color: '#cbf203' }} // Tailwind's yellow-400
+    sx={{
+      '& .MuiRating-iconEmpty': {
+        color: '#bbb', // Light gray for unfilled stars
+      },
+    }}
     />
   );
 }

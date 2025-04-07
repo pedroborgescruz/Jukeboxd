@@ -12,7 +12,8 @@ const albums = [
 
 const ImageRow = () => {
   return (
-    <div className="w-full mt-4 overflow-x-auto py-6 px-4 bg-neutral-950">
+    <div style={{ backgroundColor: '#19121f' }} 
+      className="w-full mt-4 overflow-x-auto py-6 px-4">
       <div className="mx-auto flex gap-6 justify-center w-fit">
         {albums.map((album, index) => (
           <div key={index} className="flex-shrink-0 flex flex-col items-center">
