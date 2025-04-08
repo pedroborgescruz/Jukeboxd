@@ -11,10 +11,9 @@
 <!-- [![Contributors][contributors-shield]][contributors-url] -->
 <!-- [![Forks][forks-shield]][forks-url] -->
 <!-- [![Stargazers][stars-shield]][stars-url] -->
-[![Issues][issues-shield]][issues-url]
+<!-- [![Issues][issues-shield]][issues-url]
 [![Unlicense License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
 <!-- PROJECT LOGO -->
@@ -195,9 +194,9 @@ Distributed under the Unlicense License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Pedro Borges - [@pedroborgespc](https://twitter.com/pedroborgespc) - pedroborgespc@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/pedroborgescruz/jukeboxd](https://github.com/pedroborgescruz/jukeboxd)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -235,6 +234,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/pedroborgescruz/jukeboxd/blob/main/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/pedroborgespc/
+[Next-url]: https://nextjs.org/
 <!-- [product-screenshot]: -->
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
