@@ -52,12 +52,10 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -84,6 +82,9 @@ This app is under active development.
 ### Built With
 
 * [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![Tailwind][Tailwind]][Tailwind-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,23 +129,12 @@ _Below is an example of how you can instruct your audience on installing and set
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-TBD
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/pedroborgescruz/jukeboxd/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -160,12 +150,6 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-### Top contributors:
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- LICENSE -->
@@ -201,6 +185,8 @@ Project Link: [https://github.com/pedroborgescruz/jukeboxd](https://github.com/p
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/pedroborgespc/
 [Next-url]: https://nextjs.org/
+[Tailwind-url]: https://tailwindcss.com/
 <!-- [product-screenshot]: -->
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Tailwind]: https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
