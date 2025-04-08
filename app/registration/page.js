@@ -9,10 +9,10 @@ export default function Registration() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch('https://localhost:3000/api/register', {
+    fetch('/api/register', {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, username, password })});
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({email, username, password})});
   };
 
   return (
