@@ -24,7 +24,7 @@
   <p align="center">
     Your dynamic journal for musical adventures.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template" target="_blank"><strong>Explore the docs »</strong></a>
+    <a href="#" target="_blank"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="#">View Demo</a>
@@ -65,7 +65,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Jukeboxd Screen Shot][product-screenshot]](https://i.imgur.com/c2OTSay.jpeg)
 
 This project is a music-focused take on the Letterboxd experience — a space to log, rate, and reflect on the albums and songs that shape your listening journey. Whether you're diving into a new release or revisiting a classic, it’s designed to help you catalog your thoughts, build personal lists, and see how your taste evolves over time.
 
