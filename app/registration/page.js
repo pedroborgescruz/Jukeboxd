@@ -1,18 +1,35 @@
 "use client"
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Registration() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch('/api/register', {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({email, username, password})});
+  
+    try {
+      const response = await fetch('/api/register', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, username, password }),
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        alert(data.error);
+      } else {
+        router.push("/");
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("An unexpected error occurred. Please try again later.");
+    }
   };
 
   return (

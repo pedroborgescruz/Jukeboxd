@@ -9,6 +9,7 @@ export default function HalfRating() {
     name="size-small" 
     defaultValue={0}
     size="small"
+    precision={0.5}
     style={{ color: '#cbf203' }} 
     sx={{
       '& .MuiRating-iconEmpty': {

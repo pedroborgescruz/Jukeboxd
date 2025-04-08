@@ -10,7 +10,7 @@ const navigation = [
   { name: 'Playlists', href: '#' },
   { name: 'Community', href: '#' },
   { name: 'Journal', href: '#' },
-  { name: 'Create an Account', href: '#' },
+  { name: 'Create an Account', href: '/registration' },
 ]
 
 export default function heroSection() {
@@ -27,11 +27,10 @@ export default function heroSection() {
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Jukeboxd</span>
-              <img
-                alt=""
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-vinyl-fill" viewBox="0 0 16 16">
+                <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0"/>
+              </svg>
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -61,7 +60,7 @@ export default function heroSection() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Jukeboxd</span>
                 <img
                   alt=""
@@ -128,7 +127,7 @@ export default function heroSection() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/registration"
                 className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 style = {{backgroundColor: "#6600ff"}}
               >
