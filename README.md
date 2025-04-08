@@ -186,6 +186,7 @@ Project Link: [https://github.com/pedroborgescruz/jukeboxd](https://github.com/p
 [linkedin-url]: https://www.linkedin.com/in/pedroborgespc/
 [Next-url]: https://nextjs.org/
 [Tailwind-url]: https://tailwindcss.com/
+[React-url]: https://react.dev/
 <!-- [product-screenshot]: -->
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Tailwind]: https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss
