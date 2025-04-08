@@ -65,7 +65,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[!Jukeboxd Screen Shot](https://i.imgur.com/c2OTSay.jpeg)
+![Jukeboxd](https://i.imgur.com/c2OTSay.jpeg)
 
 This project is a music-focused take on the Letterboxd experience — a space to log, rate, and reflect on the albums and songs that shape your listening journey. Whether you're diving into a new release or revisiting a classic, it’s designed to help you catalog your thoughts, build personal lists, and see how your taste evolves over time.
 
