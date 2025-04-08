@@ -19,9 +19,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-
+  <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/ee/Jukebox_JE2_BE2.png/revision/latest/thumbnail/width/360/height/360?cb=20201202075007" alt="Jukeboxd" width="100" height="100">
   <h3 align="center">Jukeboxd</h3>
-
   <p align="center">
     Your dynamic journal for musical adventures.
     <br />
