@@ -24,7 +24,7 @@ export default function Registration() {
       if (!response.ok) {
         alert(data.error);
       } else {
-        router.push("/");
+        router.push("/loggedIn");
       }
     } catch (error) {
       console.error("Registration error:", error);
