@@ -9,7 +9,7 @@ export default function HalfRating() {
   return (
     <Rating 
     name="size-small" 
-    defaultValue={num}
+    defaultValue={0}
     size="small"
     precision={0.5}
     style={{ color: '#cbf203' }} 
