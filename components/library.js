@@ -30,7 +30,7 @@ const ImageRow = () => {
               alt={album.alt}
               width={200}
               height={200}
-              className="rounded-lg object-cover lib-img"
+              className="rounded-lg object-cover border-1 border-solid border-gray-700 lib-img"
             />
             <div className="mt-4"> {/* This adds spacing between the image and stars */}
               <HalfRating />

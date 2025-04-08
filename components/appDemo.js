@@ -8,7 +8,7 @@ export default function appDemo() {
           </p>
           <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
             <div className="relative lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-neutral-900 lg:rounded-l-[2rem]"></div>
+              <div className="absolute inset-px rounded-lg bg-jukeboxd border-1 border-solid border-gray-700 lg:rounded-l-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                   <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
@@ -31,10 +31,12 @@ export default function appDemo() {
               <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-l-[2rem]"></div>
             </div>
             <div className="relative max-lg:row-start-1">
-              <div className="absolute inset-px rounded-lg bg-neutral-900 max-lg:rounded-t-[2rem]"></div>
+              <div className="absolute inset-px rounded-lg bg-jukeboxd border-1 border-solid border-gray-700 max-lg:rounded-t-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Leave a review</p>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
+                    Leave a review
+                  </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                     Unleash your inner music critic and let the world know what's good and what's not.
                   </p>
@@ -50,10 +52,12 @@ export default function appDemo() {
               <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-t-[2rem]"></div>
             </div>
             <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-              <div className="absolute inset-px rounded-lg bg-neutral-900"></div>
+              <div className="absolute inset-px rounded-lg bg-jukeboxd border-1 border-solid border-gray-700"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Connect with friends</p>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
+                    Connect with friends
+                  </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                     Create community around your love for music. Meet new friends and share content with them.
                   </p>
@@ -69,7 +73,7 @@ export default function appDemo() {
               <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5"></div>
             </div>
             <div className="relative lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-neutral-900 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+              <div className="absolute inset-px rounded-lg bg-jukeboxd border-1 border-solid border-gray-700 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                   <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
