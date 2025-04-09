@@ -19,9 +19,9 @@ export default function heroSection() {
   return (
     <div
     className="bg-neutral-900 bg-cover bg-center bg-no-repeat"
-    style={{ height: '100vh', color: "#ded4df", backgroundImage: "url('https://media.pitchfork.com/photos/67e18401c0deea472f9b162a/2:1/w_2560%2Cc_limit/Miley-Cyrus.jpeg')" }}
+    style={{ height: '100vh', color: "#ded4df", backgroundImage: "url('https://i.imgur.com/qifTBpr.jpeg')" }}
     >
-      <div className="absolute inset-0 bg-black opacity-80"></div>
+      <div className="absolute inset-0 bg-black opacity-70"></div>
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
@@ -119,24 +119,26 @@ export default function heroSection() {
         </div>
         <div style = {{color: "#ded4df"}} className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-5xl font-semibold tracking-tight text-balancetext-white sm:text-7xl">
+            <h1 className="text-5xl tracking-tight font-semibold text-balance text-white sm:text-7xl">
               Unleash the music critic in you
             </h1>
-            <p className="mt-8 text-lg font-medium text-pretty sm:text-xl/8">
-              Track albums you have listened. Save songs you want to stream. <br></br> Tell the world what's good.
+            <p className="mt-8 text-lg text-pretty sm:text-xl/8">
+              Rate albums you have listened. Track some to stream. <br></br> Tell the world what's good.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="/registration"
-                className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                style = {{backgroundColor: "#6600ff"}}
+                className="rounded-md px-3.5 py-2.5 text-sm font-semibold
+                text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2
+                focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+                bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
               >
                 Create a new account
               </a>
               <a 
                 href="#" 
                 style = {{color: "#ded4df"}}
-                className="text-sm/6">
+                className="text-sm/6 font-semibold">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
