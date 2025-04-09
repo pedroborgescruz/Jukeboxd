@@ -34,8 +34,7 @@ const ImageRow = () => {
               alt={album.alt}
               width={200}
               height={200}
-              className="rounded-lg object-cover border-1 
-              border-solid border-gray-700 lib-img"
+              className="object-cover lib-img"
             />
             <div className="mt-4">
               <HalfRating />

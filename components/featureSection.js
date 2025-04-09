@@ -1,23 +1,26 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { WindowIcon, StarIcon, BuildingLibraryIcon } from '@heroicons/react/24/solid'
 
 const features = [
   {
-    name: 'Push to deploy.',
+    name: 'Log your listens.',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: CloudArrowUpIcon,
+      'Track the albums, EPs, and singles you listen to — from first spins to repeat plays. Jukeboxd lets you easily document your listening habits over time.',
+    icon: WindowIcon,
   },
   {
-    name: 'SSL certificates.',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: LockClosedIcon,
+    name: 'Rate and review.',
+    description:
+      'Leave quick thoughts or in-depth reflections. Whether it’s a 5-star masterpiece or a total skip, your opinions help tell the story of your taste.',
+    icon: StarIcon,
   },
   {
-    name: 'Database backups.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: ServerIcon,
+    name: 'Build your library.',
+    description:
+      'Create curated lists, catalog favorites, and organize your music world however you want — from genre deep-dives to yearly wrap-ups.',
+    icon: BuildingLibraryIcon,
   },
 ]
+
 
 export default function Example() {
   return (
@@ -26,13 +29,15 @@ export default function Example() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+              <h2 className="text-base/7 font-semibold text-indigo-600">Discover more</h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                A better workflow
+                A better way to track your listening
               </p>
               <p className="mt-6 text-lg/8 text-gray-600">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                iste dolor cupiditate blanditiis ratione.
+              Ditch the spreadsheets and scattered notes — Jukeboxd helps you 
+              log every album, single, and sonic detour with ease. Build your 
+              personal archive, reflect on what moves you, and stay inspired by
+              your evolving taste alongside your friends.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
@@ -49,7 +54,7 @@ export default function Example() {
           </div>
           <img
             alt="Product screenshot"
-            src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
+            src="https://i.imgur.com/wf6D3iX.jpeg"
             width={2432}
             height={1442}
             className="w-[48rem] max-w-none rounded-xl ring-1 shadow-xl ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"

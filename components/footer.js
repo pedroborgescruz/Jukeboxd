@@ -21,7 +21,7 @@ export default function Footer() {
     <footer className="mb-5 relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <h5 className="text-lg font-semibold jukeboxd-text">
+          <h5 className="text-lg accent-jukeboxd font-semibold jukeboxd-text">
             Jukeboxd
           </h5>
           <ul className="flex flex-wrap gap-y-2 gap-x-8">
