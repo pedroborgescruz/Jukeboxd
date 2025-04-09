@@ -13,6 +13,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Jukeboxd",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+    ]
+  },
   description: "Music rating and community",
 };
 
