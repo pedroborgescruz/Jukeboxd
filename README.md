@@ -24,7 +24,7 @@
   <p align="center">
     Your dynamic journal for musical adventures.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template" target="_blank"><strong>Explore the docs »</strong></a>
+    <a href="#" target="_blank"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="#">View Demo</a>
@@ -52,12 +52,10 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -65,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Jukeboxd](https://i.imgur.com/uGIML9F.jpeg)
 
 This project is a music-focused take on the Letterboxd experience — a space to log, rate, and reflect on the albums and songs that shape your listening journey. Whether you're diving into a new release or revisiting a classic, it’s designed to help you catalog your thoughts, build personal lists, and see how your taste evolves over time.
 
@@ -84,6 +82,9 @@ This app is under active development.
 ### Built With
 
 * [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![Tailwind][Tailwind]][Tailwind-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,65 +97,42 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+You need npm to run the server.
 * npm
   ```sh
   npm install npm@latest -g
   ```
 
+And also all of the Next.js dependencies.
+* react
+  ```sh
+  npm install next@latest react@latest react-dom@latest
+  ```
+
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/pedroborgescruz/jukeboxd.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
+3. Run the Next.js server
    ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
+   npm run dev
    ```
+4. Go to http://localhost:3000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/pedroborgescruz/jukeboxd/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -171,23 +149,13 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Top contributors:
-
-<a href="https://github.com/othneildrew/Best-README-Template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=othneildrew/Best-README-Template" alt="contrib.rocks image" />
-</a>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the Unlicense License. See `LICENSE.txt` for more information.
+Distributed under the GNU License. See `LICENSE.md` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
@@ -198,25 +166,6 @@ Pedro Borges - [@pedroborgespc](https://twitter.com/pedroborgespc) - pedroborges
 Project Link: [https://github.com/pedroborgescruz/jukeboxd](https://github.com/pedroborgescruz/jukeboxd)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -234,6 +183,9 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/pedroborgespc/
 [Next-url]: https://nextjs.org/
+[Tailwind-url]: https://tailwindcss.com/
+[React-url]: https://react.dev/
 <!-- [product-screenshot]: -->
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Tailwind]: https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
