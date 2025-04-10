@@ -33,7 +33,8 @@ export default function Registration() {
   };
 
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="flex mt-10 min-h-full flex-1 flex-col 
+    justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <a href="/">
           <img
@@ -51,7 +52,8 @@ export default function Registration() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* EMAIL */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-jukeboxd">
+            <label htmlFor="email" 
+            className="block text-sm font-medium text-jukeboxd">
               Email address
             </label>
             <input
@@ -61,13 +63,16 @@ export default function Registration() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-2 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
+              className="mt-2 block w-full rounded-md bg-white px-3 py-1.5
+              text-base text-gray-900 outline outline-1 outline-gray-300
+              placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
             />
           </div>
 
           {/* USERNAME */}
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-jukeboxd">
+            <label htmlFor="username" 
+            className="block text-sm font-medium text-jukeboxd">
               Username
             </label>
             <input
@@ -76,13 +81,17 @@ export default function Registration() {
               required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="mt-2 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
+              className="mt-2 block w-full rounded-md bg-white
+              px-3 py-1.5 text-base text-gray-900 outline
+              outline-1 outline-gray-300 placeholder:text-gray-400
+              focus:outline-2 focus:outline-indigo-600"
             />
           </div>
 
           {/* PASSWORD */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-jukeboxd">
+            <label htmlFor="password" 
+            className="block text-sm font-medium text-jukeboxd">
               Password
             </label>
             <input
@@ -92,13 +101,18 @@ export default function Registration() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-2 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
+              className="mt-2 block w-full rounded-md bg-white
+              px-3 py-1.5 text-base text-gray-900 outline outline-1
+              outline-gray-300 placeholder:text-gray-400 focus:outline-2
+              focus:outline-indigo-600"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-md bg-primary px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-primary-dark"
+            className="mt-5 w-full rounded-md 
+            bg-primary px-8 py-2.5 text-sm font-semibold
+            text-white shadow hover:bg-primary-dark"
           >
             Sign up
           </button>
