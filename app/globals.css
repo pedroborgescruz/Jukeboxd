@@ -37,22 +37,18 @@ body {
   background: #6600ff;
 }
 
-@keyframes glow {
+/* @keyframes glow {
   from {
-    box-shadow: 0 0 5px -5px #cbf203;
+    box-shadow: 0 0 10px -10px #cbf203;
   }
   to {
-    box-shadow: 0 0 5px 5px #cbf203;
+    box-shadow: 0 0 10px 10px #cbf203;
   }
 }
 
 .glow-effect {
   animation: glow 1s infinite alternate;
-}
-
-.bg-primary:hover {
-  background: #8431ff;
-}
+} */
 
 .text-jukeboxd {
   color: #ded4df;
@@ -74,5 +70,4 @@ body {
 
 .lib-img:hover {
   transform: scale(1.02);
-  box-shadow: 0px 0px 10px #6600ff;
 }

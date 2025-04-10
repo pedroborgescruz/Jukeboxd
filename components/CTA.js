@@ -38,7 +38,7 @@ export default function CTA() {
             <div className="relative mt-16 h-80 lg:mt-8">
               <img
                 alt="App screenshot"
-                src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
+                src="https://i.imgur.com/kFpinQo.png"
                 width={1824}
                 height={1080}
                 className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
