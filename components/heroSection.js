@@ -19,7 +19,7 @@ export default function heroSection() {
   return (
     <div
     className="bg-neutral-900 bg-cover bg-center bg-no-repeat"
-    style={{ height: '100vh', color: "#ded4df", backgroundImage: "url('https://i.imgur.com/qifTBpr.jpeg')" }}
+    style={{ height: '100vh', color: "#ded4df", backgroundImage: "url('https://i0.wp.com/www.housequake.com/wp-content/uploads/2022/06/Purple-Rain-Movie-Featured-1.jpg?fit=1920%2C1080&quality=90&strip=all&ssl=1')" }}
     >
       <div className="absolute inset-0 bg-black opacity-70"></div>
       <header className="absolute inset-x-0 top-0 z-50">
@@ -131,7 +131,7 @@ export default function heroSection() {
                 className="rounded-md px-3.5 py-2.5 text-sm font-semibold
                 text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2
                 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
-                bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+                bg-primary glow-effect"
               >
                 Create a new account
               </a>

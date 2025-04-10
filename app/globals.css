@@ -29,8 +29,25 @@ body {
   background: #19121f;
 }
 
+.bg-accent {
+  background: #cbf203;
+}
+
 .bg-primary {
   background: #6600ff;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px -5px #cbf203;
+  }
+  to {
+    box-shadow: 0 0 5px 5px #cbf203;
+  }
+}
+
+.glow-effect {
+  animation: glow 1s infinite alternate;
 }
 
 .bg-primary:hover {

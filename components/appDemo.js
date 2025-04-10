@@ -2,7 +2,7 @@ export default function appDemo() {
     return (
       <div className="py-24 sm:py-32" style = {{backgroundColor: "#13091c"}}>
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <h2 style = {{color: "#6600ff"}} className="text-center text-base/7 font-semibold">A social network for music lovers</h2>
+          <h2 className="text-center text-base/7 accent-jukeboxd font-semibold">A social network for music lovers</h2>
           <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
             Everything you need for your music passion
           </p>
@@ -22,7 +22,7 @@ export default function appDemo() {
                   <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
                     <img
                       className="size-full object-cover object-top"
-                      src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
+                      src="https://i.imgur.com/QuUkqmq.png"
                       alt=""
                     />
                   </div>
@@ -44,7 +44,7 @@ export default function appDemo() {
                 <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
                   <img
                     className="w-full max-lg:max-w-xs"
-                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
+                    src="https://i.imgur.com/FPXLWXG.png"
                     alt=""
                   />
                 </div>
@@ -65,7 +65,7 @@ export default function appDemo() {
                 <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
                   <img
                     className="h-[min(152px,40cqw)] object-cover"
-                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
+                    src="https://i.imgur.com/LJCjs3z.png"
                     alt=""
                   />
                 </div>

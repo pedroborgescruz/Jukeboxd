@@ -15,7 +15,7 @@ const ImageRow = () => {
   return (
     <div className="w-full mt-10 mb-10 bg-[#19121f] py-6 px-4 overflow-x-auto">
       <div className="mb-10 text-center">
-        <h2 className="text-base font-semibold text-[#6600ff]">
+        <h2 className="text-base font-semibold accent-jukeboxd text-[#6600ff]">
           Make your voice be heard
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-4xl sm:text-5xl font-semibold tracking-tight text-white">
