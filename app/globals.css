@@ -29,6 +29,10 @@ body {
   background: #19121f;
 }
 
+.bg-white {
+  background: #ded4df;
+}
+
 .bg-accent {
   background: #cbf203;
 }
@@ -52,6 +56,10 @@ body {
 
 .text-jukeboxd {
   color: #ded4df;
+}
+
+.text-primary {
+  color: #19121f;
 }
 
 .accent-jukeboxd {

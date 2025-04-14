@@ -19,7 +19,8 @@ export default function heroSection() {
   return (
     <div
     className="bg-neutral-900 bg-cover bg-center bg-no-repeat"
-    style={{ height: '100vh', color: "#ded4df", backgroundImage: "url('https://www.hollywoodreporter.com/wp-content/uploads/2025/04/GettyImages-2209915645-1.jpg?w=2000&h=1126&crop=1')" }}
+    style={{ height: '100vh', color: "#ded4df", 
+      backgroundImage: "url('https://1.soompi.io/wp-content/uploads/2015/10/fx-7.jpg')" }}
     >
       <div className="absolute inset-0 bg-black opacity-70"></div>
       <header className="absolute inset-x-0 top-0 z-50">
