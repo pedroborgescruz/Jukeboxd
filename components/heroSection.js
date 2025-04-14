@@ -19,7 +19,7 @@ export default function heroSection() {
   return (
     <div
     className="bg-neutral-900 bg-cover bg-center bg-no-repeat"
-    style={{ height: '100vh', color: "#ded4df", backgroundImage: "url('https://i0.wp.com/www.housequake.com/wp-content/uploads/2022/06/Purple-Rain-Movie-Featured-1.jpg?fit=1920%2C1080&quality=90&strip=all&ssl=1')" }}
+    style={{ height: '100vh', color: "#ded4df", backgroundImage: "url('https://www.hollywoodreporter.com/wp-content/uploads/2025/04/GettyImages-2209915645-1.jpg?w=2000&h=1126&crop=1')" }}
     >
       <div className="absolute inset-0 bg-black opacity-70"></div>
       <header className="absolute inset-x-0 top-0 z-50">

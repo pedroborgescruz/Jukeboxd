@@ -1,3 +1,4 @@
+
 export default function appDemo() {
     return (
       <div className="py-24 sm:py-32" style = {{backgroundColor: "#13091c"}}>
@@ -45,7 +46,7 @@ export default function appDemo() {
                   <img
                     className="w-full max-lg:max-w-xs"
                     src="https://i.imgur.com/FPXLWXG.png"
-                    alt=""
+                    alt="Music library"
                   />
                 </div>
               </div>
@@ -80,20 +81,99 @@ export default function appDemo() {
                   Compile your own playlists
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-white max-lg:text-center">
-                    Create playlists for multiple purposes. Send your friends a personalized mixtape for their birthday.
+                    Create lists for multiple purposes. Send your friends a personalized mixtape for their birthday.
                   </p>
                 </div>
                 <div className="relative min-h-[30rem] w-full grow">
-                  <div className="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
-                    <div className="flex bg-gray-800/40 ring-1 ring-white/5">
+                  <div className="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-jukeboxd shadow-2xl">
+                    <div className="flex bg-jukeboxd/40 ring-1 ring-white/5">
                       <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
-                        <div className="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">
-                          NotificationSetting.jsx
+                        <div className="border-r border-b border-r-white/10 border-b-white/20 bg-jukeboxd/5 px-4 py-2 text-white">
+                          Luke's Birthday
                         </div>
-                        <div className="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
+                        <div className="border-r border-gray-600/10 px-4 py-2">
+                          My Favorites
+                        </div>
                       </div>
                     </div>
-                    <div className="px-6 pt-6 pb-14">{/* Your code example */}</div>
+                    <div className="px-6 pt-6 pb-14">
+                      <div className="space-y-4">
+
+                        <div className="flex gap-4 items-center">
+                          <img 
+                            src="https://media.pitchfork.com/photos/65f9ba5e7f6a6f4c6c74a9d8/master/w_1600,c_limit/Beyonce-Cowboy-Carter.jpg"
+                            className="w-10 border border-gray-600 rounded"
+                            alt=""
+                          />
+                          <div>
+                            <p>Cowboy Carter</p>
+                            <p className='font-bold text-gray-500'>Beyoncé</p>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-4 items-center">
+                          <img 
+                            src="https://media.pitchfork.com/photos/65babf56882ca58cb22a1947/master/w_1600,c_limit/Tyla-Tyla.jpeg"
+                            className="w-10 border border-gray-600 rounded"
+                            alt=""
+                          />
+                          <div>
+                            <p>Tyla</p>
+                            <p className='font-bold text-gray-500'>Tyla</p>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-4 items-center">
+                          <img 
+                            src="https://media.pitchfork.com/photos/65b13a8954b682b8bc594dff/master/w_1600,c_limit/Empress-Of-For-Your-Consideration.jpg"
+                            className="w-10 border border-gray-600 rounded"
+                            alt=""
+                          />
+                          <div>
+                            <p>For Your Consideration</p>
+                            <p className='font-bold text-gray-500'>Empress Of</p>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-4 items-center">
+                          <img 
+                            src="https://media.pitchfork.com/photos/65a6ccaa37e7c24b108f0e09/master/w_1600,c_limit/Adrianne-Lenker-Bright-Future.jpg"
+                            className="w-10 border border-gray-600 rounded"
+                            alt=""
+                          />
+                          <div>
+                            <p>Bright Future</p>
+                            <p className='font-bold text-gray-500'>Adrianne Lenker</p>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-4 items-center">
+                          <img 
+                            src="https://media.pitchfork.com/photos/65dfd21824cf8305d775f0cd/master/w_1600,c_limit/Charli-XCX-Brat.jpg"
+                            className="w-10 border border-gray-600 rounded"
+                            alt=""
+                          />
+                          
+                          <div>
+                            <p>BRAT</p>
+                            <p className='font-bold text-gray-500'>Charli xcx</p>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-4 items-center">
+                          <img 
+                            src="https://media.pitchfork.com/photos/65260753aeb62be7989dbd5e/master/w_1600,c_limit/Kali-Uchis-Orqui%CC%81deas.jpg"
+                            className="w-10 border border-gray-600 rounded"
+                            alt=""
+                          />
+                          <div>
+                            <p>Orquídeas</p>
+                            <p className='font-bold text-gray-500'>Kali Uchis</p>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
