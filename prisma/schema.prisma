@@ -13,6 +13,7 @@ model User {
   email String @unique
   username String @unique
   password String 
+  
   posts Post[]
 }
 
@@ -26,13 +27,14 @@ model Album {
   label            String
   metacriticRating Int
   pitchforkRating  Int
-  tracklist        String
+
+  tracklist Song[]
 }
 
 model Song {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   title    String
-  length Int      // duration in seconds 
+  length Int      // seconds duration
   albumId  String   @db.ObjectId
   album    Album    @relation(fields: [albumId], references: [id], onDelete: Cascade)
   position Int      // track number
@@ -49,7 +51,7 @@ model Artist {
 }
 
 model Post {
-  id     Int  @id
-  userId Int
+  id     Int  @id @map("_id")
+  userId String @db.ObjectId
   user   User @relation(fields: [userId], references: [id])
 }
