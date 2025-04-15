@@ -5,6 +5,7 @@ generator client {
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 model User {
@@ -12,4 +13,43 @@ model User {
   email String @unique
   username String @unique
   password String 
+  posts Post[]
+}
+
+model Album {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  year             Int
+  artistId         String   @db.ObjectId
+  artist           Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  avgRating        Float
+  label            String
+  metacriticRating Int
+  pitchforkRating  Int
+  tracklist        String
+}
+
+model Song {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  length Int      // duration in seconds 
+  albumId  String   @db.ObjectId
+  album    Album    @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  position Int      // track number
+}
+
+model Artist {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String  
+  label       String
+  genre       String
+  overallRating Int
+
+  albums      Album[]
+}
+
+model Post {
+  id     Int  @id
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
 }
