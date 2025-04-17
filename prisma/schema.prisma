@@ -1,3 +1,12 @@
+/*
+Jukeboxd DB Models
+Author: Pedro Borges Cruz
+Database models to capture existing relations and entities that  
+exist in the Jukeboxd application. 
+*/
+
+// Prisma original stuff.
+/////////////////////////////////////////
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,16 +16,22 @@ datasource db {
   url      = env("DATABASE_URL")
   relationMode = "prisma"
 }
+/////////////////////////////////////////
 
+// Jukeboxd models.
+/////////////////////////////////////////
+
+// Model what an user is under the hood for the application. 
 model User {
+  
   id String @id @default(auto()) @map("_id") @db.ObjectId
   email String @unique
   username String @unique
   password String 
-  
-  posts Post[]
+  ratings Rating[]
 }
 
+// Model what an album is under the hood for the application. 
 model Album {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
   name             String
@@ -27,10 +42,10 @@ model Album {
   label            String
   metacriticRating Int
   pitchforkRating  Int
-
   tracklist Song[]
 }
 
+// Model what a song is under the hood for the application. 
 model Song {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   title    String
@@ -40,16 +55,17 @@ model Song {
   position Int      // track number
 }
 
+// Model what an artist is under the hood for the application. 
 model Artist {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String  
   label       String
   genre       String
   overallRating Int
-
   albums      Album[]
 }
 
+// Model what a rating is under the hood. 
 model Rating {
   id     Int  @id @map("_id")
   userId String @db.ObjectId
