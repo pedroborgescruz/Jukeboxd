@@ -1,17 +1,14 @@
-import {User, Link} from "@heroui/react";
-
 export default function App() {
   return (
-    <User
-      avatarProps={{
-        src: "https://avatars.githubusercontent.com/u/30373425?v=4",
-      }}
-      description={
-        <Link isExternal href="https://www.adriannelenker.com/" size="sm">
-          @alenker
-        </Link>
-      }
-      name="Adrianne Lenker"
-    />
+    <div className="flex gap-4 items-center">
+      <img 
+        src="https://images.squarespace-cdn.com/content/v1/56066cf9e4b0ffbc0fe62db1/1603860556825-SX2V9ODK5MOZ1OZ8OLLK/a1829975877_16.jpg"
+        className="w-10 border rounded-full border-gray-600 rounded"
+      />
+      <div>
+        <p className='font-bold text-white'>Adrianne Lenker</p>
+        <p className='text-gray-500'>Artist</p>
+      </div>
+    </div>
   );
 }
