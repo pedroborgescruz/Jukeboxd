@@ -1,5 +1,7 @@
 import React from "react";
 import User from "../../components/user";
+import Stats from "../../components/artistStats";
+
 
 export default function App() {
   const albums = [
@@ -48,9 +50,20 @@ export default function App() {
   return (
     <div className="w-full h-screen flex mb-20">
       {/* Left - Artist Info */}
-      <div className="w-[20%] p-6 overflow-y-auto">
-        <User />
-        
+      <div className="w-[20%] p-6 overflow-y-auto flex flex-col justify-between">
+        <div>
+            <User />
+            <div className="break-words max-w-full mt-10">
+                <p className="text-sm text-gray-500">
+                Adrianne Lenker (born July 9, 1991) is an American singer-songwriter
+                from Plymouth, Minnesota. She is the guitarist and lead vocalist of
+                Brooklyn-based indie rock band Big Thief. She has also released four
+                solo albums and two EPs with her former husband, Big Thief co-founder
+                Buck Meek.
+                </p>
+            </div>
+        </div>
+        <Stats />
       </div>
 
       {/* Middle - Full Height Background Image */}

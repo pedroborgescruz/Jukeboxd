@@ -6,7 +6,7 @@ export default function App() {
         className="w-10 border rounded-full border-gray-600 rounded"
       />
       <div>
-        <p className='font-bold text-white'>Adrianne Lenker</p>
+        <p className='font-bold text-jukeboxd'>Adrianne Lenker</p>
         <p className='text-gray-500'>Artist</p>
       </div>
     </div>
