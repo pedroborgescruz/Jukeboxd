@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
-import {Tooltip, Button} from "@heroui/react";
+import {Tooltip} from "@heroui/react";
 import HalfRating from "../../components/rating";
 import Progress from "../../components/progress";
 import Heart from "../../components/heart";
@@ -48,7 +48,8 @@ export default function App() {
           placement="top">
             <div className="flex gap-1 items-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" className="size-4">
-                <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                <path fillRule="evenodd"
+                d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
               </svg>
               <small className="text-gray-500 mb-1 ">42k</small>
             </div>
@@ -71,8 +72,8 @@ export default function App() {
           <small className="text-gray-500 mb-1 ">2024</small>
           <p className="text-tiny font-bold uppercase text-jukeboxd">
             Bright Future</p>
-          <h4 className="font-semibold text-large text-gray-300">
-            by <a target="_blank" href="#">Adrianne Lenker</a>
+          <h4 className="text-large text-gray-300">
+            by <a className="underline" target="_blank" href="#">Adrianne Lenker</a>
           </h4>
           <small className="text-gray-500">Label: 4AD</small>
         </CardHeader>
