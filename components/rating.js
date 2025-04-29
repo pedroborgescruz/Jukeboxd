@@ -2,7 +2,6 @@ import * as React from 'react';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 
-
 export default function HalfRating() {
   const num = Math.floor(Math.random() * 6);
 
