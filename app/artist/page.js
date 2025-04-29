@@ -54,7 +54,7 @@ export default function App() {
         <div>
             <User />
             <div className="break-words max-w-full mt-10">
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-jukeboxd">
                 Adrianne Lenker (born July 9, 1991) is an American singer-songwriter
                 from Plymouth, Minnesota. She is the guitarist and lead vocalist of
                 Brooklyn-based indie rock band Big Thief. She has also released four
@@ -87,7 +87,8 @@ export default function App() {
                 alt={`${album.title} cover`}
               />
               <div>
-                <p className="text-gray-500 font-bold text-sm">{album.title}</p>
+                <p className="text-primary font-bold text-sm">
+                    <a href="/album">{album.title}</a></p>
                 <p className="text-gray-500 text-sm">{album.date}</p>
               </div>
             </div>
