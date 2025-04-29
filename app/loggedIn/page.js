@@ -1,4 +1,4 @@
-import UserView from '../../components/userView';
+import UserView from '../../components/nav';
 
 export default function Page() {
   return (
