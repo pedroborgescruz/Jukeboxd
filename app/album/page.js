@@ -7,7 +7,7 @@ import Heart from "../../components/heart";
 
 export default function App() {
   return (
-    <div className="grid grid-cols-2 gap-1">
+    <div className="grid grid-cols-2 gap-1 mb-50">
       {/* First Column */}
       <Card className="py-4 mt-25 flex flex-col items-center">
         <CardBody className="overflow-visible py-2 flex-col items-center">

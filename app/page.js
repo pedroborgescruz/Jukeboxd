@@ -13,7 +13,7 @@ export default function Home() {
       <ImageRow />
       <FeatureSection />
       <CTA />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }
