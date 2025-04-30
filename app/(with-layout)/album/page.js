@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import {Tooltip} from "@heroui/react";
-import HalfRating from "../../components/rating";
-import Progress from "../../components/progress";
+import HalfRating from "../../../components/rating";
+import Progress from "../../../components/progress";
 
 export default function App() {
   return (
@@ -71,7 +71,7 @@ export default function App() {
           <p className="text-tiny font-bold uppercase text-jukeboxd">
             Bright Future</p>
           <h4 className="text-large text-gray-300">
-            by <a className="underline" target="_blank" href="/artist">Adrianne Lenker</a>
+            by <a className="underline" href="/artist">Adrianne Lenker</a>
           </h4>
           <small className="text-gray-500">Label: 4AD</small>
         </CardHeader>
