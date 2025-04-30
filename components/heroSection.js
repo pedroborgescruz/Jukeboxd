@@ -18,92 +18,10 @@ export default function heroSection() {
 
   return (
     <div
-    className="bg-neutral-900 bg-cover bg-center bg-no-repeat"
-    style={{ height: '100vh', color: "#ded4df", 
-      backgroundImage: "url('https://1.soompi.io/wp-content/uploads/2015/10/fx-7.jpg')" }}
+      className="relative w-[100%] bg-cover bg-center bg-no-repeat 
+      bg-[url(https://i.imgur.com/JIP611F.jpeg)]"
     >
-      <div className="absolute inset-0 bg-black opacity-70"></div>
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
-          <div className="flex lg:flex-1">
-            <a href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Jukeboxd</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-vinyl-fill" viewBox="0 0 16 16">
-                <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0"/>
-              </svg>
-            </a>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="size-6" />
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm/6 text-white">
-                {item.name}
-              </a>
-            ))}
-          </div>
-          <div style = {{color: "#cbf203"}} className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="/login" className="text-sm/6 font-semibold">
-              Sign in <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-        </nav>
-        <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-          <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <a href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">Jukeboxd</span>
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                  className="h-8 w-auto"
-                />
-              </a>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon aria-hidden="true" className="size-6" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-white hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 text-white hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                </div>
-              </div>
-            </div>
-          </DialogPanel>
-        </Dialog>
-      </header>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.8)_100%)] " />
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
@@ -120,10 +38,10 @@ export default function heroSection() {
         </div>
         <div style = {{color: "#ded4df"}} className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-5xl tracking-tight font-semibold text-balance text-white sm:text-7xl">
+            <h1 className="text-5xl tracking-tight font-bold text-balance text-white sm:text-7xl">
               Unleash the music critic in you
             </h1>
-            <p className="mt-8 text-lg text-pretty sm:text-xl/8">
+            <p className="mt-8 text-lg text-white sm:text-xl/8">
               Rate albums you have listened. Track some to stream. <br></br> Tell the world what's good.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -138,8 +56,7 @@ export default function heroSection() {
               </a>
               <a 
                 href="#" 
-                style = {{color: "#ded4df"}}
-                className="text-sm/6 font-semibold">
+                className="text-sm/6 font-semibold text-white">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>

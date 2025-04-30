@@ -58,6 +58,10 @@ body {
   color: #ded4df;
 }
 
+.bg-demo {
+  background: #281c33;
+}
+
 .text-primary {
   color: #19121f;
 }
