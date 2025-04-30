@@ -81,11 +81,13 @@ export default function App() {
         <div className="flex flex-col gap-6">
           {albums.map((album, index) => (
             <div key={index} className="flex gap-4 items-center">
-              <img 
-                src={album.img}
-                className="w-16 h-16 object-cover border border-gray-600 rounded"
-                alt={`${album.title} cover`}
-              />
+              <a href="/album">
+                <img 
+                  src={album.img}
+                  className="w-16 h-16 object-cover border border-gray-600 rounded"
+                  alt={`${album.title} cover`}
+                />
+              </a>
               <div>
                 <p className="text-primary font-bold text-sm">
                     <a href="/album">{album.title}</a></p>
