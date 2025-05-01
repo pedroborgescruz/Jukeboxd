@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import {Tooltip} from "@heroui/react";
-import HalfRating from "../../../components/rating";
-import Progress from "../../../components/progress";
+import HalfRating from "../../../../components/rating";
+import Progress from "../../../../components/progress";
 
 export default function App() {
   return (
