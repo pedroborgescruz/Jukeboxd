@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",  // Required when using "paths"
     "paths": {
-      "@lib/*": ["lib/*"]
+      "@/*": ["./src/*"]
     }
   }
 }
