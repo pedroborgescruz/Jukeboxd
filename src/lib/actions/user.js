@@ -37,5 +37,6 @@ export const deleteUser = async (id) => {
     await User.findOneAndDelete({ clerkId: id });
   } catch (error) {
     console.log('Error deleting user:', error);
+    throw error; 
   }
 };
