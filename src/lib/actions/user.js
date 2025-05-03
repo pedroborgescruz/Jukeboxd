@@ -11,24 +11,24 @@ export const createOrUpdateUser = async (
 ) => {
   try {
     await connect();
+
     const user = await User.findOneAndUpdate(
       { clerkId: id },
       {
         $set: {
-          firstName: first_name || '',
-          lastName: last_name || '',
-          avatar: image_url || '',
-          email: (email_addresses?.[0]?.email_address) || '',
-          username: username || '',
+          firstName: first_name,
+          lastName: last_name,
+          avatar: image_url,
+          email: email_addresses[0]?.email_address || '',
+          username,
         },
       },
       { new: true, upsert: true }
     );
-    console.log('User upserted in MongoDB:', user);
+
     return user;
   } catch (error) {
-    console.log('Error creating or updating user:', error);
-    throw error; 
+    console.error('❌ Error creating or updating user:', error);
   }
 };
 
@@ -37,7 +37,6 @@ export const deleteUser = async (id) => {
     await connect();
     await User.findOneAndDelete({ clerkId: id });
   } catch (error) {
-    console.log('Error deleting user:', error);
-    throw error; 
+    console.error('❌ Error deleting user:', error);
   }
 };
