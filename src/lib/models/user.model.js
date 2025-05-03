@@ -38,19 +38,4 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// const User = mongoose.models.User || mongoose.model('User', userSchema);
-
-// export default User;
-
-// import mongoose from 'mongoose';
-
-// const UserSchema = new mongoose.Schema({
-//   clerkId: { type: String, required: true, unique: true },
-//   firstName: String,
-//   lastName: String,
-//   avatar: String,
-//   email: { type: String, required: true },
-//   username: String,
-// });
-
 export default mongoose.models.User || mongoose.model('User', UserSchema);
