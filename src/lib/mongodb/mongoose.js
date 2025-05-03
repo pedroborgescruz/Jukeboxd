@@ -4,6 +4,7 @@ let initialized = false;
 
 export const connect = async () => {
   if (initialized) {
+    console.log('Already connected to MongoDB');
     return; // If already initialized, return early.
   }
 
