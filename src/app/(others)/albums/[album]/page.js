@@ -1,5 +1,6 @@
 import Progress from "../../../../components/progress";
 import Album from "../../../../components/albumProfile";
+import Input from "../../../../components/input";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <div className="flex flex-col items-center">
             <small className="text-gray-300">POPULAR REVIEWS</small>
         </div>
+        <Input />
         <Progress />
         <Progress />
         <Progress />
