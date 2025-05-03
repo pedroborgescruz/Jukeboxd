@@ -2,7 +2,6 @@ import React from "react";
 import User from "../../../../components/user";
 import Stats from "../../../../components/artistStats";
 
-
 export default function App() {
   const albums = [
     {
