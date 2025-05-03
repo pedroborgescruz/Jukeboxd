@@ -15,15 +15,16 @@ export const createOrUpdateUser = async (
       { clerkId: id },
       {
         $set: {
-          firstName: first_name,
-          lastName: last_name,
-          avatar: image_url,
-          email: email_addresses[0].email_address,
-          username,
+          firstName: first_name || '',
+          lastName: last_name || '',
+          avatar: image_url || '',
+          email: (email_addresses?.[0]?.email_address) || '',
+          username: username || '',
         },
       },
       { new: true, upsert: true }
     );
+    console.log('User upserted in MongoDB:', user);
     return user;
   } catch (error) {
     console.log('Error creating or updating user:', error);
