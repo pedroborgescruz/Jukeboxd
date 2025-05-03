@@ -11,7 +11,7 @@ export const connect = async () => {
 
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: 'next-social-app',
+      dbName: 'Jukeboxd-App',
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
