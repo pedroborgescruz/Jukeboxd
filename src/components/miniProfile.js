@@ -54,6 +54,11 @@ export default function miniProfile() {
                 ))}
                 </MenuItems>
             </Menu>
+            <div className="hidden xl:inline flex-1 w-20">
+                <p className="text-gray-500 ml-2 font-bold uppercase text-sm truncate">
+                    @{user && user.username}
+                </p>
+            </div>
             </div>
         </div>
     )
