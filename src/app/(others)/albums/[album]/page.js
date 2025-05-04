@@ -10,12 +10,10 @@ export default function App() {
       <div className="col-span-3">
         <Album />
       </div>
-
       {/* Second Column - 3/12 (1/4) */}
       <div className="col-span-3">
         <AlbumActions />
       </div>
-
       {/* Third Column - 6/12 (1/2) */}
       <div className="col-span-6 space-y-4 mt-20">
         <div className="flex flex-col items-center">
