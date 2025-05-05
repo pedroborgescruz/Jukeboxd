@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Footer from '../../components/footer'
-import Nav from '../../components/nav'
+import Footer from '@/components/footer'
+import Nav from '@/components/nav'
 import "../globals.css";
 import { ClerkProvider, ClerkLoaded, ClerkLoading } from '@clerk/nextjs';
 

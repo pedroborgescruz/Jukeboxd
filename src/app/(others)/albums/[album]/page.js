@@ -1,7 +1,7 @@
-import Progress from "../../../../components/progress";
-import Album from "../../../../components/albumProfile";
-import Input from "../../../../components/input";
-import AlbumActions from "../../../../components/albumActions";
+import Progress from "@/components/progress";
+import Album from "@/components/albumProfile";
+import Input from "@/components/input";
+import AlbumActions from "@/components/albumActions";
 
 export default function App() {
   return (

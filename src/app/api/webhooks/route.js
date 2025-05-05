@@ -1,8 +1,8 @@
 import { Webhook } from 'svix';
 import { headers } from 'next/headers';
 import { clerkClient } from '@clerk/nextjs/server';
-import { createOrUpdateUser, deleteUser } from '../../../lib/actions/user';
-import { connect } from '../../../lib/mongodb/mongoose';
+import { createOrUpdateUser, deleteUser } from '@/lib/actions/user';
+import { connect } from '@/lib/mongodb/mongoose';
 
 export async function POST(req) {
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
