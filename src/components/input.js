@@ -1,4 +1,5 @@
 "use client";
+
 import { useUser } from "@clerk/nextjs";
 import { useRef, useState, useEffect } from 'react';
 
@@ -28,7 +29,6 @@ export default function Input() {
         });
         setPostLoading(false);
         setText('');
-        location.reload();
     };
 
     return (
