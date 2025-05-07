@@ -24,7 +24,6 @@ export default function Input() {
             username: user.username,
             text,
             profileImg: user.imageUrl,
-            image: imageFileUrl,
           }),
         });
         setPostLoading(false);
