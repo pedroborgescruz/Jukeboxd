@@ -8,6 +8,13 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <div className="flex items-center bg-[#14091c] justify-center gap-x-6">
+        <a
+          href="/"
+          className="text-base font-bold accent-jukeboxd">
+          Create a new account <span aria-hidden="true">→</span>
+        </a>
+      </div>
       <AppDemo />
       <ImageRow />
       <FeatureSection />

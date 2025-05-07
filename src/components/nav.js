@@ -45,16 +45,16 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
-    <Disclosure as="nav" className="bg-jukeboxd">
+    <Disclosure as="nav" className="bg-[#13091c] border-b border-[#44194d]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <div className="shrink-0">
-              <img
-                alt="Jukeboxd"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                className="size-8"
-              />
+            <div>
+              <a href='/'>
+                <h1 className='font-black text-[#c8ef05]'>
+                  JKBXD 
+                </h1>
+              </a>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">

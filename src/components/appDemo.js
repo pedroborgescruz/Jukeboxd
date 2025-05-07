@@ -1,18 +1,18 @@
 
 export default function appDemo() {
     return (
-      <div className="py-24 sm:py-32" style = {{backgroundColor: "#13091c"}}>
+      <div className="py-24 sm:py-36 bg-[#13091c]">
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
           <h2 className="text-center text-base/7 accent-jukeboxd font-semibold">A social network for music lovers</h2>
           <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
             Everything you need for your music passion
           </p>
-          <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+          <div className="mt-10 grid gap-2 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
             <div className="relative lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-demo border-1 border-solid border-gray-900 lg:rounded-l-[2rem]"></div>
+              <div className="absolute inset-px rounded-lg bg-[#1b0c27] border-1  border-solid border-[#44194d] lg:rounded-l-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                  <p className="mt-2 text-lg font-bold  tracking-tight text-white max-lg:text-center">
+                  <p className="mt-2 text-lg font-bold tracking-tight text-white max-lg:text-center">
                     Track what you stream
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-white max-lg:text-center">
@@ -32,7 +32,7 @@ export default function appDemo() {
               <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-l-[2rem]"></div>
             </div>
             <div className="relative max-lg:row-start-1">
-              <div className="absolute inset-px rounded-lg bg-demo border-1 border-solid border-gray-900 max-lg:rounded-t-[2rem]"></div>
+              <div className="absolute inset-px rounded-lg bg-[#1b0c27] border-1 border-solid border-[#44194d] max-lg:rounded-t-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                   <p className="mt-2 text-lg font-bold tracking-tight text-white max-lg:text-center">
@@ -53,7 +53,7 @@ export default function appDemo() {
               <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-t-[2rem]"></div>
             </div>
             <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-              <div className="absolute inset-px rounded-lg bg-demo border-1 border-solid border-gray-900"></div>
+              <div className="absolute inset-px rounded-lg bg-[#1b0c27] border-1 border-solid border-[#44194d]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                   <p className="mt-2 text-lg font-bold tracking-tight text-white max-lg:text-center">
@@ -74,7 +74,7 @@ export default function appDemo() {
               <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5"></div>
             </div>
             <div className="relative lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-demo border-1 border-solid border-gray-900 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+              <div className="absolute inset-px rounded-lg bg-[#1b0c27] border-1 border-solid border-[#44194d] max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                   <p className="mt-2 text-lg font-bold tracking-tight text-white max-lg:text-center">
@@ -85,7 +85,7 @@ export default function appDemo() {
                   </p>
                 </div>
                 <div className="relative min-h-[30rem] w-full grow">
-                  <div className="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-jukeboxd shadow-2xl">
+                  <div className="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl border border-[#44194d] bg-jukeboxd shadow-2xl">
                     <div className="flex bg-jukeboxd/40 ring-1 ring-white/5">
                       <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
                         <div className="border-r border-b border-r-white/10 border-b-white/20 bg-jukeboxd/5 px-4 py-2 text-white">
