@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from 'react';
 export default function Input() {
     const { user, isSignedIn, isLoaded } = useUser();
     const [text, setText] = useState('');
+    const [postLoading, setPostLoading] = useState(false);
 
     if (!isSignedIn || !isLoaded) {
         return null;
@@ -26,6 +27,7 @@ export default function Input() {
             image: imageFileUrl,
           }),
         });
+        setPostLoading(false);
         setText('');
         location.reload();
     };
