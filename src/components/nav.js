@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Disclosure,
   DisclosureButton,
@@ -13,10 +15,10 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import {
+  useClerk,
   SignedIn,
   SignedOut,
   SignInButton,
-  SignOutButton,
 } from '@clerk/nextjs';
 import MiniProfile from './miniProfile';
 
@@ -36,14 +38,17 @@ const navigation = [
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Sign out', action: 'signout' },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
 export default function Nav() {
+  const { signOut } = useClerk();
+
   return (
     <Disclosure as="nav" className="bg-[#13091c] border-b border-[#44194d]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -105,22 +110,27 @@ export default function Nav() {
       <SignedIn>
         <DisclosurePanel className="md:hidden">
           <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-            {navigation.map((item) => (
-              <DisclosureButton
-                key={item.name}
-                as="a"
-                href={item.href}
-                aria-current={item.current ? 'page' : undefined}
-                className={classNames(
-                  item.current
-                    ? 'bg-gray-900 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                  'block rounded-md px-3 py-2 text-base font-medium'
-                )}
-              >
-                {item.name}
-              </DisclosureButton>
-            ))}
+            {userNavigation.map((item) =>
+              item.action === 'signout' ? (
+                <DisclosureButton
+                  key={item.name}
+                  as="button"
+                  onClick={() => signOut()}
+                  className="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                >
+                  {item.name}
+                </DisclosureButton>
+              ) : (
+                <DisclosureButton
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                >
+                  {item.name}
+                </DisclosureButton>
+              )
+            )}
           </div>
           <div className="border-t border-gray-700 pt-4 pb-3">
             <div className="flex items-center px-5">

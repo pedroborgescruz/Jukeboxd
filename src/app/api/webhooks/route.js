@@ -14,7 +14,7 @@ export async function POST(req) {
   }
 
   // Ensure MongoDB is connected
-  await connect(); // Add this line here!
+  await connect();
 
   // Get the headers
   const headerPayload = headers();
