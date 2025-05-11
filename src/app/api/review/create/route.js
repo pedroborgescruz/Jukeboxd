@@ -4,6 +4,7 @@ import { currentUser } from '@clerk/nextjs/server';
 
 export const REVIEW = async (req) => {
     const user = await currentUser();
+    console.log('Creating post');
     try {
       await connect();
       const data = await req.json();
