@@ -8,12 +8,10 @@ export default function Input() {
     const [text, setText] = useState('');
     const [postLoading, setPostLoading] = useState(false);
 
-    if (!isSignedIn || !isLoaded) {
-        return null;
-    }
-
     const handleSubmit = async () => {
+
         setPostLoading(true);
+        
         const response = await fetch('/api/review/create', {
           method: 'POST',
           headers: {
@@ -30,6 +28,10 @@ export default function Input() {
         setPostLoading(false);
         setText('');
     };
+
+    if (!isSignedIn || !isLoaded) {
+        return null;
+    }
 
     return (
         <div className='flex border-b border-gray-700 p-3 mb-5 space-x-3 w-130'>
@@ -50,7 +52,7 @@ export default function Input() {
                 disabled={text.trim() === '' || postLoading}
                 className='bg-primary text-white px-4 py-1.5 rounded-full shadow-md hover:brightness-95 disabled:opacity-50'
                 onClick={handleSubmit}>
-                    Review
+                    Post
                 </button>
             </div>           
         </div>

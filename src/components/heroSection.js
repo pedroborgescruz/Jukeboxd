@@ -16,7 +16,7 @@ export default function heroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.8)_100%)] " />
 
       <div
-        class="absolute bottom-0 left-0 right-0 z-20 h-50 bg-gradient-to-b from-transparent to-[#14091c]"
+        className="absolute bottom-0 left-0 right-0 z-20 h-50 bg-gradient-to-b from-transparent to-[#14091c]"
       ></div>
 
       <div className="relative isolate px-6 pt-3 lg:px-8">
