@@ -14,7 +14,7 @@ export default function Input() {
 
     const handleSubmit = async () => {
         setPostLoading(true);
-        const response = await fetch('/api/post/create', {
+        const response = await fetch('/api/review/create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
