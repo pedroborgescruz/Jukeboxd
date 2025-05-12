@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex items-center bg-[#14091c] justify-center gap-x-6">
         <a
           href="/"
-          className="text-base font-bold accent-jukeboxd">
+          className="text-base font-bold primary-jukeboxd">
           Create a new account <span aria-hidden="true">→</span>
         </a>
       </div>
