@@ -1,8 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Footer from '../../components/footer'
-import Nav from '../../components/nav'
 import "../globals.css";
-import { ClerkProvider, ClerkLoaded, ClerkLoading } from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,21 +15,17 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Jukeboxd",
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-    ]
+    icon: [{ url: '/favicon.ico' }],
   },
   description: "Music rating and community",
 };
 
-export default function RootLayout({ children }) {
+export default function AuthLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body>
-          <main>{children}</main>
-        </body>
-      </html>
+      <div className={`${geistSans.variable} ${geistMono.variable}`}>
+        <main>{children}</main>
+      </div>
     </ClerkProvider>
   );
 }

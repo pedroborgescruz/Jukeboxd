@@ -51,7 +51,7 @@ export default function Icons({ review, onCommentClick }) {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ postId: review._id }),
+          body: JSON.stringify({ reviewId: review._id }),
         });
 
         if (res.status === 200) {
