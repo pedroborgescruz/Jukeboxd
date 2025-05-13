@@ -10,7 +10,7 @@ export const DELETE = async (req) => {
     if (!user) {
       return new Response('Unauthorized', { status: 401 });
     }
-    await Review.findByIdAndDelete(data.postId);
+    await Review.findByIdAndDelete(data.reviewId);
     return new Response('Review deleted', { status: 200 });
   } catch (error) {
     console.log('Error deleting review:', error);

@@ -64,39 +64,23 @@ export default function Icons({ review, onCommentClick }) {
   };
 
   return (
-    <div className='flex justify-start gap-5 p-2 text-gray-500'>
-      {/* Comment */}
-      <div className='flex items-center'>
-        <HiOutlineChat
-          className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-sky-500 hover:bg-sky-100'
-          onClick={() => {
-            if (!user) {
-              router.push('/sign-in');
-            } else if (typeof onCommentClick === 'function') {
-              onCommentClick(review._id);
-            }
-          }}
-        />
-        {review.comments.length > 0 && (
-          <span className='text-xs'>{review.comments.length}</span>
-        )}
-      </div>
+    <div className='flex justify-end gap-2 text-gray-500'>
 
       {/* Like */}
       <div className='flex items-center'>
         {isLiked ? (
           <HiHeart
             onClick={likePost}
-            className='h-8 w-8 cursor-pointer rounded-full p-2 text-red-600 transition duration-500 ease-in-out hover:text-red-500 hover:bg-red-100'
+            className='h-8 w-8 cursor-pointer rounded-full p-2 text-white transition duration-200 ease-in-out hover:text-red-500'
           />
         ) : (
           <HiOutlineHeart
             onClick={likePost}
-            className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-red-500 hover:bg-red-100'
+            className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-red-500'
           />
         )}
         {likes.length > 0 && (
-          <span className={`text-xs ${isLiked && 'text-red-600'}`}>
+          <span className={`text-xs ${isLiked && 'text-white'}`}>
             {likes.length}
           </span>
         )}
@@ -106,7 +90,7 @@ export default function Icons({ review, onCommentClick }) {
       {user?.publicMetadata.userMongoId === review.user && (
         <HiOutlineTrash
           onClick={deletePost}
-          className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-red-500 hover:bg-red-100'
+          className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-red-500'
         />
       )}
     </div>
