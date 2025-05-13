@@ -1,51 +1,51 @@
 'use client';
 
-import { HiOutlineChat, HiOutlineHeart, HiOutlineTrash, HiHeart} from 'react-icons/hi';
+import {
+  HiOutlineChat,
+  HiOutlineHeart,
+  HiOutlineTrash,
+  HiHeart,
+} from 'react-icons/hi';
 import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-import { modalAtom, postIdAtom } from '@/atom/modalAtom';
-import { useRecoilState } from 'recoil';
 
-export default function Icons({ review }) {
+export default function Icons({ review, onCommentClick }) {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(review.likes || []);
-  const [open, setOpen] = useRecoilState(modalAtom);
-  const [postId, setPostId] = useRecoilState(postIdAtom);
   const { user } = useUser();
   const router = useRouter();
 
-  const likePost = () => {
+  const likePost = async () => {
     if (!user) {
       return router.push('/sign-in');
     }
-    const like = fetch('/api/review/like', {
+
+    const res = await fetch('/api/review/like', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ postId: review._id }),
     });
-    if (like && isLiked) {
-      setLikes(
-        likes.filter((like) => like !== user.publicMetadata.userMongoId)
+
+    if (res.ok) {
+      const userId = user.publicMetadata.userMongoId;
+      setLikes((prev) =>
+        isLiked ? prev.filter((id) => id !== userId) : [...prev, userId]
       );
     }
-    if (like && !isLiked) {
-      setLikes([...likes, user.publicMetadata.userMongoId]);
-    }
   };
+
   useEffect(() => {
-    if (user && likes?.includes(user.publicMetadata.userMongoId)) {
-      setIsLiked(true);
-    } else {
-      setIsLiked(false);
+    if (user) {
+      setIsLiked(likes.includes(user.publicMetadata.userMongoId));
     }
   }, [likes, user]);
 
   const deletePost = async () => {
     if (window.confirm('Are you sure you want to delete this review?')) {
-      if (user && user.publicMetadata.userMongoId === review.user) {
+      if (user?.publicMetadata.userMongoId === review.user) {
         const res = await fetch('/api/review/delete', {
           method: 'DELETE',
           headers: {
@@ -53,6 +53,7 @@ export default function Icons({ review }) {
           },
           body: JSON.stringify({ postId: review._id }),
         });
+
         if (res.status === 200) {
           location.reload();
         } else {
@@ -64,15 +65,15 @@ export default function Icons({ review }) {
 
   return (
     <div className='flex justify-start gap-5 p-2 text-gray-500'>
+      {/* Comment */}
       <div className='flex items-center'>
         <HiOutlineChat
-          className='h-8 w-8 cursor-pointer rounded-full  transition duration-500 ease-in-out p-2 hover:text-sky-500 hover:bg-sky-100'
+          className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-sky-500 hover:bg-sky-100'
           onClick={() => {
             if (!user) {
               router.push('/sign-in');
-            } else {
-              setOpen(!open);
-              setPostId(review._id);
+            } else if (typeof onCommentClick === 'function') {
+              onCommentClick(review._id);
             }
           }}
         />
@@ -80,16 +81,18 @@ export default function Icons({ review }) {
           <span className='text-xs'>{review.comments.length}</span>
         )}
       </div>
+
+      {/* Like */}
       <div className='flex items-center'>
         {isLiked ? (
           <HiHeart
             onClick={likePost}
-            className='h-8 w-8 cursor-pointer rounded-full  transition duration-500 ease-in-out p-2 text-red-600 hover:text-red-500 hover:bg-red-100'
+            className='h-8 w-8 cursor-pointer rounded-full p-2 text-red-600 transition duration-500 ease-in-out hover:text-red-500 hover:bg-red-100'
           />
         ) : (
           <HiOutlineHeart
             onClick={likePost}
-            className='h-8 w-8 cursor-pointer rounded-full  transition duration-500 ease-in-out p-2 hover:text-red-500 hover:bg-red-100'
+            className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-red-500 hover:bg-red-100'
           />
         )}
         {likes.length > 0 && (
@@ -98,10 +101,12 @@ export default function Icons({ review }) {
           </span>
         )}
       </div>
-      {user && user.publicMetadata.userMongoId === review.user && (
+
+      {/* Delete */}
+      {user?.publicMetadata.userMongoId === review.user && (
         <HiOutlineTrash
           onClick={deletePost}
-          className='h-8 w-8 cursor-pointer rounded-full  transition duration-500 ease-in-out p-2 hover:text-red-500 hover:bg-red-100'
+          className='h-8 w-8 cursor-pointer rounded-full p-2 transition duration-500 ease-in-out hover:text-red-500 hover:bg-red-100'
         />
       )}
     </div>

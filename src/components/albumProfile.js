@@ -1,6 +1,5 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import {Tooltip} from "@heroui/react";
-import HalfRating from "./rating";
 
 export default function Album() {
     return (
@@ -65,7 +64,7 @@ export default function Album() {
                 <p className="text-tiny font-bold uppercase text-jukeboxd">
                     Bright Future</p>
                 <h4 className="text-large text-gray-300">
-                    by <a className="underline" href="/artist">Adrianne Lenker</a>
+                    by <a className="underline" href="/artists/alenker">Adrianne Lenker</a>
                 </h4>
                 <small className="text-gray-500">Label: 4AD</small>
                 </CardHeader>

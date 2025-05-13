@@ -34,7 +34,7 @@ export default function Review({review}) {
         <Link href={`/reviews/${review?._id}`}>
           <img src={review?.image} className='rounded-2xl mr-2' />
         </Link>
-        {/* <Icons review={review} id={review._id} /> */}
+        <Icons review={review} id={review._id} />
       </div>
     </div>
     )
