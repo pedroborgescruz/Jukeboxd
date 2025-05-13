@@ -14,6 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Jukeboxd",
+  icons: {
+    icon: [{ url: '/favicon.ico' }],
+  },
+  description: "Music rating and community",
+};
+
 export default function OthersLayout({ children }) {
   return (
     <ClerkProvider>
