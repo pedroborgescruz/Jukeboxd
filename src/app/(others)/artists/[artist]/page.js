@@ -47,7 +47,7 @@ export default function App() {
   ];
 
   return (
-    <div className="w-full h-screen flex mb-20">
+    <div className="w-full h-screen flex">
       {/* Left - Artist Info */}
       <div className="w-[20%] p-6 overflow-y-auto flex flex-col justify-between">
         <div>

@@ -18,11 +18,11 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="mb-15 relative w-full">
+    <footer className="p-7 bg-[#14091c] relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <h5 className="text-lg accent-jukeboxd font-semibold jukeboxd-text">
-            Jukeboxd
+            <a href="/">Jukeboxd</a>
           </h5>
           <ul className="flex flex-wrap gap-y-2 gap-x-8">
            {['About Us', 'License', 'Contribute', 'Contact Us'].map((item) => (
@@ -39,7 +39,7 @@ export default function Footer() {
          </ul>
         </div>
 
-        <div className="mt-5 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+        <div className="mt-5 flex w-full flex-col items-center justify-center border-t border-[#441c4c] py-4 md:flex-row md:justify-between">
           <p className="mb-4 text-center text-sm font-normal text-blue-gray-900 md:mb-0">
             &copy; {currentYear}{" "}
             <a href="/" className="hover:underline">
