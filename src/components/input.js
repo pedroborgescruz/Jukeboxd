@@ -35,7 +35,7 @@ export default function Input() {
     }
 
     return (
-        <div className='flex border-b border-gray-700 p-3 mb-5 space-x-3 w-130'>
+        <div className='flex border-b border-[#441c4c] p-3 mb-5 space-x-3 w-130'>
             <img
             src={user.imageUrl}
             alt='user-img'
