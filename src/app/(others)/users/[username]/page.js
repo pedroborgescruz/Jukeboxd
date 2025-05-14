@@ -45,38 +45,35 @@ return (
           {/* Right Side: Stats */}
           <div className='flex space-x-6 text-gray-300 mt-4 sm:mt-0'>
             <div className='text-center'>
-              <span className='block font-bold text-white'>{data.following.length}</span>
+              <span className='block font-semibold text-white'>{data.following.length}</span>
               <span className='text-sm'>Mixtapes</span>
             </div>
             <div className='text-center'>
-              <span className='block font-bold text-white'>{data.following.length}</span>
+              <span className='block font-semibold text-white'>{data.following.length}</span>
               <span className='text-sm'>Albums</span>
             </div>
             <div className='text-center'>
-              <span className='block font-bold text-white'>{data.following.length}</span>
+              <span className='block font-semibold text-white'>{data.following.length}</span>
               <span className='text-sm'>Reviews</span>
             </div>
             <div className='text-center'>
-              <span className='block font-bold text-white'>{data.following.length}</span>
+              <span className='block font-semibold text-white'>{data.following.length}</span>
               <span className='text-sm'>Following</span>
             </div>
             <div className='text-center'>
-              <span className='block font-bold text-white'>{data.followers.length}</span>
+              <span className='block font-semibold text-white'>{data.followers.length}</span>
               <span className='text-sm'>Followers</span>
             </div>
+          </div>
+          <div className='p-6'>
+            <FollowButton user={data} />
           </div>
         </div>
 
         {/* Favorite Albums Section */}
         <div className='p-6'>
-          <h3 className='text-xl font-semibold mb-4'>Favorite Albums</h3>
-          <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4'>
-            <AlbumGridBox title='Favorite Albums' albums={data.favoriteAlbums} />
-          </div>
-        </div>
-
-        <div className='p-6'>
-          <FollowButton user={data} />
+          <h3 className='text-xl font-semibold mb-4'>My Favorite Albums</h3>
+            <AlbumGridBox title='My Favorite Albums' albums={data.favoriteAlbums} />
         </div>
       </>
     )}
