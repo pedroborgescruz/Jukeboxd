@@ -22,62 +22,187 @@ export default async function UserPage({ params }) {
   }
   
 return (
-  <div className='p-3 max-w-5xl mx-auto min-h-screen text-white'>
-    {!data && <h2 className='text-center mt-5 text-lg'>User not found</h2>}
+    <div className='p-8 max-w-5xl mx-auto min-h-screen text-white'>
+      {!data && <h2 className='text-center mt-5 text-lg'>User not found</h2>}
 
-    {data && (
-      <>
-        {/* Profile Header */}
-        <div className='flex justify-between items-center p-6 border-b border-gray-700 flex-wrap'>
-          {/* Left Side: Avatar + Info */}
-          <div className='flex items-center space-x-4'>
-            <img
-              src={data.avatar}
-              alt='Profile'
-              className='h-20 w-20 rounded-full border border-gray-500'
-            />
+      {data && (
+        // Use CSS Grid for the two-column layout
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'> {/* md:grid-cols-3 creates a 2/3 | 1/3 split on medium screens and up */}
+
+          {/* Left Column - User Profile Details */}
+          <div className='md:col-span-2 space-y-6'> {/* Add vertical space between sections */}
+
+            {/* Profile Header */}
+            {/* Adjusted padding slightly to fit within the grid column */}
+            <div className='flex justify-between items-center pb-6 border-b border-gray-700 flex-wrap'>
+              {/* Left Side: Avatar + Info */}
+              <div className='flex items-center space-x-4'>
+                <img
+                  src={data.avatar}
+                  alt='Profile'
+                  className='h-20 w-20 rounded-full border border-gray-500'
+                />
+                <div>
+                  <h2 className='text-2xl font-bold'>{data.firstName + ' ' + data.lastName}</h2>
+                  {/* Assuming a bio field exists in your data */}
+                  <p className='text-sm mt-1 text-gray-300'>{data.bio || 'No bio available.'}</p>
+                </div>
+              </div>
+
+              {/* Right Side: Stats */}
+              <div className='flex space-x-6 text-gray-300 mt-4 sm:mt-0'>
+                 {/* NOTE: The original code used data.following.length for Mixtapes, Albums, and Reviews.
+                     You'll likely need separate data fields for these stats.
+                     Using placeholder values or adjusting based on actual data structure.
+                 */}
+                <div className='text-center'>
+                  <span className='block font-semibold text-white'>{/* data.mixtapes.length or similar */}0</span> {/* Placeholder */}
+                  <span className='text-sm'>Mixtapes</span>
+                </div>
+                <div className='text-center'>
+                  <span className='block font-semibold text-white'>{/* data.albumsRated.length or similar */}0</span> {/* Placeholder */}
+                  <span className='text-sm'>Albums</span>
+                </div>
+                <div className='text-center'>
+                  <span className='block font-semibold text-white'>{/* data.reviews.length or similar */}0</span> {/* Placeholder */}
+                  <span className='text-sm'>Reviews</span>
+                </div>
+                <div className='text-center'>
+                  <span className='block font-semibold text-white'>{data.following?.length || 0}</span> {/* Use optional chaining */}
+                  <span className='text-sm'>Following</span>
+                </div>
+                <div className='text-center'>
+                  <span className='block font-semibold text-white'>{data.followers?.length || 0}</span> {/* Use optional chaining */}
+                  <span className='text-sm'>Followers</span>
+                </div>
+              </div>
+              {/* Follow Button - Placed logically near the header/stats */}
+              <div className='mt-4 sm:mt-0'>
+                 {/* Ensure FollowButton is correctly implemented and receives the target user */}
+                <FollowButton user={data} />
+              </div>
+            </div>
+
+            {/* Favorite Albums Section */}
+            {/* Removed p-6, space-y on parent handles spacing */}
             <div>
-              <h2 className='text-2xl font-bold'>{data.firstName + ' ' + data.lastName}</h2>
-              <p className='text-sm mt-1 text-gray-300'>This is my short little bio.</p>
+              <h3 className='text-xl font-semibold mb-4'>My Favorite Albums</h3>
+               {/* Ensure data.favoriteAlbums is the correct data for this component */}
+              <AlbumGridBox title='My Favorite Albums' albums={data.favoriteAlbums} />
+            </div>
+
+            {/* Recent Ratings Section */}
+            {/* Removed p-6 */}
+            <div>
+              <h3 className='text-xl font-semibold mb-4'>Recent Ratings</h3>
+               {/* NOTE: Original code used favoriteAlbums here again.
+                   Assuming you have a 'recentRatings' field in your data.
+               */}
+              <AlbumGridBox title='Recent Ratings' albums={data.recentRatings} /> {/* Use actual recent ratings data */}
+            </div>
+
+            {/* Recent Reviews Section */}
+            {/* Removed p-6 */}
+            <div>
+              <h3 className='text-xl font-semibold mb-4'>Recent Reviews</h3>
+              {/* Add component or logic to display recent reviews */}
+              {/* Placeholder: */}
+              <div className='text-gray-300'>
+                {/* Example review structure - replace with actual component/data mapping */}
+                <div className='border-b border-gray-700 pb-4 mb-4 last:border-b-0 last:mb-0'>
+                   <p className='font-semibold'>Album Title Here</p>
+                   <p className='text-sm text-gray-400'>Rating: X/10</p>
+                   <p className='mt-2'>Review text goes here...</p>
+                </div>
+                {/* Add more reviews */}
+                <div>No recent reviews yet.</div>
+              </div>
             </div>
           </div>
 
-          {/* Right Side: Stats */}
-          <div className='flex space-x-6 text-gray-300 mt-4 sm:mt-0'>
-            <div className='text-center'>
-              <span className='block font-semibold text-white'>{data.following.length}</span>
-              <span className='text-sm'>Mixtapes</span>
+          {/* Right Column - Sidebar Content (Mimicking Image) */}
+          {/* This column will take up 1 unit of the 3-unit grid on medium screens and above */}
+          <div className='md:col-span-1 space-y-6'> {/* Add vertical space between sections */}
+
+            {/* Around the Web Section */}
+            <div className='bg-gray-800 p-4 rounded'>
+              <h4 className='text-lg font-semibold mb-3'>Around the Web</h4>
+              {/* Placeholder for web links - replace with actual data if available */}
+              <div className='text-sm text-gray-300 space-y-2'>
+                 {/* Assuming external links are part of your user data */}
+                 {data.externalLinks?.spotify && (
+                    <p>
+                       <span className='font-bold'>Spotify:</span>{' '}
+                       <a href={data.externalLinks.spotify} target="_blank" rel="noopener noreferrer" className='text-blue-400 hover:underline'>
+                         {new URL(data.externalLinks.spotify).hostname + (new URL(data.externalLinks.spotify).pathname)} {/* Display hostname and path */}
+                       </a>
+                     </p>
+                 )}
+                 {data.externalLinks?.lastfm && (
+                    <p>
+                       <span className='font-bold'>Last.fm:</span>{' '}
+                       <a href={data.externalLinks.lastfm} target="_blank" rel="noopener noreferrer" className='text-blue-400 hover:underline'>
+                         {new URL(data.externalLinks.lastfm).hostname + (new URL(data.externalLinks.lastfm).pathname)} {/* Display hostname and path */}
+                       </a>
+                     </p>
+                 )}
+                {/* Add more links similarly if available in data */}
+                {!data.externalLinks && <p>No external links available.</p>}
+              </div>
             </div>
-            <div className='text-center'>
-              <span className='block font-semibold text-white'>{data.following.length}</span>
-              <span className='text-sm'>Albums</span>
+
+            {/* Rating Distribution Section */}
+            <div className='bg-gray-800 p-4 rounded'>
+              <h4 className='text-lg font-semibold mb-3'>Rating Distribution</h4>
+              {/* Placeholder for rating distribution - replace with actual data and component */}
+              {/* Assuming data.ratingDistribution is an array of objects like [{ range: '100', count: 7 }, ...] */}
+              <div className='text-sm text-gray-300 space-y-1'>
+                {/* Example Structure - Map over actual rating distribution data */}
+                 {/* You'll need total number of ratings to calculate percentage */}
+                 {data.ratingDistribution && data.totalRatings > 0 ? (
+                   data.ratingDistribution.map((rating) => (
+                      <div key={rating.range} className='flex justify-between items-center'>
+                         <span>{rating.range}</span>
+                         <div className='w-3/4 bg-gray-600 h-3 rounded overflow-hidden'>
+                            {/* Calculate width based on count and totalRatings */}
+                            <div
+                               className={`h-full ${rating.count > 0 ? 'bg-green-500' : 'bg-transparent'}`} // Change color based on range if needed
+                               style={{ width: `${(rating.count / data.totalRatings) * 100}%` }}
+                            ></div>
+                         </div>
+                         <span>{rating.count}</span>
+                      </div>
+                   ))
+                 ) : (
+                   <p>No rating data available.</p>
+                 )}
+              </div>
+              {/* Link to albums based on ratings - replace # with actual link */}
+              <div className='text-right mt-3'>
+                <a href='#' className='text-blue-400 hover:underline text-sm'>ALBUMS <span className='ml-1'>&gt;</span></a>
+              </div>
             </div>
-            <div className='text-center'>
-              <span className='block font-semibold text-white'>{data.following.length}</span>
-              <span className='text-sm'>Reviews</span>
+
+            {/* Donation/Ad Section - Example based on image */}
+            {/* "Become a Donor" section */}
+            <div className='bg-green-700 bg-opacity-30 border border-green-600 p-4 rounded flex items-center space-x-3'>
+               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+               </svg>
+               <div>
+                 <h5 className='font-semibold text-green-400'>Become a Donor</h5>
+                 <p className='text-sm text-green-300'>Donor badge, no ads + more benefits.</p>
+               </div>
             </div>
-            <div className='text-center'>
-              <span className='block font-semibold text-white'>{data.following.length}</span>
-              <span className='text-sm'>Following</span>
-            </div>
-            <div className='text-center'>
-              <span className='block font-semibold text-white'>{data.followers.length}</span>
-              <span className='text-sm'>Followers</span>
-            </div>
-          </div>
-          <div className='p-6'>
-            <FollowButton user={data} />
+
+            {/* Placeholder for Ad - Example */}
+             <div className='bg-gray-800 h-32 flex items-center justify-center rounded text-gray-500 text-sm'>
+               ADVERTISEMENT Placeholder
+             </div>
+
           </div>
         </div>
-
-        {/* Favorite Albums Section */}
-        <div className='p-6'>
-          <h3 className='text-xl font-semibold mb-4'>My Favorite Albums</h3>
-            <AlbumGridBox title='My Favorite Albums' albums={data.favoriteAlbums} />
-        </div>
-      </>
-    )}
-  </div>
-);
-
+      )}
+    </div>
+  );
 }
