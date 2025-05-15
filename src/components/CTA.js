@@ -38,7 +38,7 @@ export default function CTA() {
             <div className="relative mt-16 h-80 lg:mt-8">
               <img
                 alt="App screenshot"
-                src="https://i.imgur.com/kFpinQo.png"
+                src="https://compote.slate.com/images/6d8ff781-bc6e-42ca-84cf-55818c32ee50.jpeg?crop=1560%2C1040%2Cx0%2Cy0"
                 width={1824}
                 height={1080}
                 className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
