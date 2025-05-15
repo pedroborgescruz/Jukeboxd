@@ -58,12 +58,12 @@ return (
                 <div className='text-center'>
                   <span className='block font-semibold text-white'>{/* data.mixtapes.length or similar */}0</span> {/* Placeholder */}
                   <span className='text-sm'>
-                    <a href="#">Library</a></span>
+                    <a>Library</a></span>
                 </div>
                 <div className='text-center'>
                   <span className='block font-semibold text-white'>{/* data.reviews.length or similar */}0</span> {/* Placeholder */}
                   <span className='text-sm'>
-                    <a href="#">Reviews</a></span>
+                    <a>Reviews</a></span>
                 </div>
                 <div className='text-center'>
                   <span className='block font-semibold text-white'>{data.following?.length || 0}</span> {/* Use optional chaining */}
@@ -87,23 +87,15 @@ return (
             </div>
 
             {/* Recent Ratings Section */}
-            {/* Removed p-6 */}
             <div>
               <h3 className='text-xl font-semibold mb-4'>Recent Ratings</h3>
-               {/* NOTE: Original code used favoriteAlbums here again.
-                   Assuming you have a 'recentRatings' field in your data.
-               */}
-              <AlbumGridBox title='Recent Ratings' albums={data.recentRatings} /> {/* Use actual recent ratings data */}
+              <AlbumGridBox title='Recent Ratings' albums={data.recentRatings} />
             </div>
 
             {/* Recent Reviews Section */}
-            {/* Removed p-6 */}
             <div>
               <h3 className='text-xl font-semibold mb-4'>Recent Reviews</h3>
-              {/* Add component or logic to display recent reviews */}
-              {/* Placeholder: */}
               <div className='text-gray-300'>
-                {/* Example review structure - replace with actual component/data mapping */}
                 <div className='border-b border-gray-700 pb-4 mb-4 last:border-b-0 last:mb-0'>
                    <p className='font-semibold'>Album Title Here</p>
                    <p className='text-sm text-gray-400'>Rating: X/10</p>
@@ -116,20 +108,18 @@ return (
           </div>
 
           {/* Right Column - Sidebar Content (Mimicking Image) */}
-          {/* This column will take up 1 unit of the 3-unit grid on medium screens and above */}
-          <div className='md:col-span-1 space-y-6'> {/* Add vertical space between sections */}
-
+          <div className='md:col-span-1 space-y-6'> 
             {/* Around the Web Section */}
             <div className='bg-gray-800 p-4 rounded'>
-              <h4 className='text-lg font-semibold mb-3'>My Socials</h4>
-              {/* Placeholder for web links - replace with actual data if available */}
+              <h4 className='text-lg font-semibold mb-3'>Around the Web</h4>
+              {/* Placeholder for web links */}
               <div className='text-sm text-gray-300 space-y-2'>
                  {/* Assuming external links are part of your user data */}
                  {data.externalLinks?.spotify && (
                     <p>
                        <span className='font-bold'>Spotify:</span>{' '}
                        <a href={data.externalLinks.spotify} target="_blank" rel="noopener noreferrer" className='text-blue-400 hover:underline'>
-                         {new URL(data.externalLinks.spotify).hostname + (new URL(data.externalLinks.spotify).pathname)} {/* Display hostname and path */}
+                         {new URL(data.externalLinks.spotify).hostname + (new URL(data.externalLinks.spotify).pathname)} 
                        </a>
                      </p>
                  )}
@@ -137,7 +127,7 @@ return (
                     <p>
                        <span className='font-bold'>Last.fm:</span>{' '}
                        <a href={data.externalLinks.lastfm} target="_blank" rel="noopener noreferrer" className='text-blue-400 hover:underline'>
-                         {new URL(data.externalLinks.lastfm).hostname + (new URL(data.externalLinks.lastfm).pathname)} {/* Display hostname and path */}
+                         {new URL(data.externalLinks.lastfm).hostname + (new URL(data.externalLinks.lastfm).pathname)} 
                        </a>
                      </p>
                  )}
@@ -149,11 +139,9 @@ return (
             {/* Rating Distribution Section */}
             <div className='bg-gray-800 p-4 rounded'>
               <h4 className='text-lg font-semibold mb-3'>Rating Distribution</h4>
-              {/* Placeholder for rating distribution - replace with actual data and component */}
-              {/* Assuming data.ratingDistribution is an array of objects like [{ range: '100', count: 7 }, ...] */}
               <div className='text-sm text-gray-300 space-y-1'>
                 {/* Example Structure - Map over actual rating distribution data */}
-                 {/* You'll need total number of ratings to calculate percentage */}
+                 {/* Need total number of ratings to calculate percentage */}
                  {data.ratingDistribution && data.totalRatings > 0 ? (
                    data.ratingDistribution.map((rating) => (
                       <div key={rating.range} className='flex justify-between items-center'>
@@ -161,7 +149,7 @@ return (
                          <div className='w-3/4 bg-gray-600 h-3 rounded overflow-hidden'>
                             {/* Calculate width based on count and totalRatings */}
                             <div
-                               className={`h-full ${rating.count > 0 ? 'bg-green-500' : 'bg-transparent'}`} // Change color based on range if needed
+                               className={`h-full ${rating.count > 0 ? 'bg-green-500' : 'bg-transparent'}`}
                                style={{ width: `${(rating.count / data.totalRatings) * 100}%` }}
                             ></div>
                          </div>
@@ -172,13 +160,11 @@ return (
                    <p>No rating data available.</p>
                  )}
               </div>
-              {/* Link to albums based on ratings - replace # with actual link */}
               <div className='text-right mt-3'>
                 <a href='#' className='text-blue-400 hover:underline text-sm'>ALBUMS <span className='ml-1'>&gt;</span></a>
               </div>
             </div>
 
-            {/* Donation/Ad Section - Example based on image */}
             {/* "Become a Donor" section */}
             <div className='bg-green-700 bg-opacity-30 border border-green-600 p-4 rounded flex items-center space-x-3'>
                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -190,7 +176,7 @@ return (
                </div>
             </div>
 
-            {/* Placeholder for Ad - Example */}
+            {/* Placeholder for Ad */}
              <div className='bg-gray-800 h-32 flex items-center justify-center rounded text-gray-500 text-sm'>
                ADVERTISEMENT Placeholder
              </div>

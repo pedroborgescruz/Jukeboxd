@@ -38,11 +38,13 @@ const AlbumGridBox = ({ title = "Albums" }) => {
             className='rounded overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300'
             >
             <div className='aspect-square w-full'>
+              <a href="/albums/trial">
                 <img
                 src={album.img}
                 alt={album.title}
-                className='w-full h-full object-cover rounded border border-gray-700'
+                className='w-full h-full object-cover rounded border border-gray-700 hover:border-gray-300 transition-colors duration-300'
                 />
+              </a>
             </div>
             </div>
         ))}
