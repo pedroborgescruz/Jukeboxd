@@ -47,39 +47,34 @@ return (
                   {/* Assuming a bio field exists in your data */}
                   <p className='text-sm mt-1 text-gray-300'>{data.bio || 'No bio available.'}</p>
                 </div>
+                {/* Follow Button */}
+                {/* <div className='mt-4 sm:mt-0'>
+                  <FollowButton user={data} />
+                </div> */}
               </div>
 
               {/* Right Side: Stats */}
               <div className='flex space-x-6 text-gray-300 mt-4 sm:mt-0'>
-                 {/* NOTE: The original code used data.following.length for Mixtapes, Albums, and Reviews.
-                     You'll likely need separate data fields for these stats.
-                     Using placeholder values or adjusting based on actual data structure.
-                 */}
                 <div className='text-center'>
                   <span className='block font-semibold text-white'>{/* data.mixtapes.length or similar */}0</span> {/* Placeholder */}
-                  <span className='text-sm'>Mixtapes</span>
-                </div>
-                <div className='text-center'>
-                  <span className='block font-semibold text-white'>{/* data.albumsRated.length or similar */}0</span> {/* Placeholder */}
-                  <span className='text-sm'>Albums</span>
+                  <span className='text-sm'>
+                    <a href="#">Library</a></span>
                 </div>
                 <div className='text-center'>
                   <span className='block font-semibold text-white'>{/* data.reviews.length or similar */}0</span> {/* Placeholder */}
-                  <span className='text-sm'>Reviews</span>
+                  <span className='text-sm'>
+                    <a href="#">Reviews</a></span>
                 </div>
                 <div className='text-center'>
                   <span className='block font-semibold text-white'>{data.following?.length || 0}</span> {/* Use optional chaining */}
-                  <span className='text-sm'>Following</span>
+                  <span className='text-sm'>
+                    <a href="#">Following</a></span>
                 </div>
                 <div className='text-center'>
                   <span className='block font-semibold text-white'>{data.followers?.length || 0}</span> {/* Use optional chaining */}
-                  <span className='text-sm'>Followers</span>
+                  <span className='text-sm'>
+                    <a href="#">Followers</a></span>
                 </div>
-              </div>
-              {/* Follow Button - Placed logically near the header/stats */}
-              <div className='mt-4 sm:mt-0'>
-                 {/* Ensure FollowButton is correctly implemented and receives the target user */}
-                <FollowButton user={data} />
               </div>
             </div>
 
@@ -126,7 +121,7 @@ return (
 
             {/* Around the Web Section */}
             <div className='bg-gray-800 p-4 rounded'>
-              <h4 className='text-lg font-semibold mb-3'>Around the Web</h4>
+              <h4 className='text-lg font-semibold mb-3'>My Socials</h4>
               {/* Placeholder for web links - replace with actual data if available */}
               <div className='text-sm text-gray-300 space-y-2'>
                  {/* Assuming external links are part of your user data */}
