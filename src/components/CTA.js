@@ -2,7 +2,7 @@ export default function CTA() {
     return (
       <div style={{backgroundColor: "#19121f"}}>
         <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-demo px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+          <div className="relative isolate overflow-hidden bg-[#1b0c27] border border-[#3e2046] px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
             <svg
               viewBox="0 0 1024 1024"
               aria-hidden="true"
@@ -26,7 +26,7 @@ export default function CTA() {
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                 <a
                   href="/registration"
-                  className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="rounded-md border border-[#8130fc] bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Get started
                 </a>
@@ -41,7 +41,7 @@ export default function CTA() {
                 src="https://compote.slate.com/images/6d8ff781-bc6e-42ca-84cf-55818c32ee50.jpeg?crop=1560%2C1040%2Cx0%2Cy0"
                 width={1824}
                 height={1080}
-                className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 border border-[#8130fc] ring-1 ring-white/10"
               />
             </div>
           </div>

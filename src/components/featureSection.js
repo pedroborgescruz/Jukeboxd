@@ -57,7 +57,7 @@ export default function Example() {
             src="https://i.imgur.com/ZTM53nj.png"
             width={2432}
             height={1442}
-            className="w-[48rem] max-w-none rounded-xl ring-1 shadow-xl ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+            className="w-[48rem] max-w-none rounded-xl ring-1 shadow-xl border border-[#14091c] hover:border-[#5f3c69] transition-colors duration-200 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
           />
         </div>
       </div>

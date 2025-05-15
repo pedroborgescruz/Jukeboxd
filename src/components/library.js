@@ -5,7 +5,7 @@ import HalfRating from './rating';
 const albums = [
   { src: '/albums/lana.png', alt: 'Lana Del Rey' },
   { src: '/albums/thesecret.png', alt: 'The Secret of Us' },
-  { src: '/albums/darkside.png', alt: 'Dark Side of the Moon' },
+  // { src: '/albums/darkside.png', alt: 'Dark Side of the Moon' },
   { src: '/albums/igor.jpeg', alt: 'IGOR' },
   { src: '/albums/lemonade.webp', alt: 'Lemonade' },
   { src: '/albums/kate.webp', alt: 'Hounds of Love' },
@@ -34,7 +34,7 @@ const ImageRow = () => {
               alt={album.alt}
               width={200}
               height={200}
-              className="object-cover lib-img"
+              className="object-cover border-2 border-[#3e2046] rounded-md hover:border-3 hover:border-[#5f3c69] transition-colors duration-200"
             />
             <div className="mt-4">
               <HalfRating />
