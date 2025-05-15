@@ -46,7 +46,7 @@ export default function Nav() {
   const { signOut } = useClerk();
 
   return (
-    <Disclosure as="nav" className="bg-[#13091c] border-b border-[#44194d]">
+    <Disclosure as="nav" className="bg-[#14091c] border-b border-[#3e2046]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">

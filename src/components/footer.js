@@ -39,7 +39,7 @@ export default function Footer() {
          </ul>
         </div>
 
-        <div className="mt-5 flex w-full flex-col items-center justify-center border-t border-[#441c4c] py-4 md:flex-row md:justify-between">
+        <div className="mt-5 flex w-full flex-col items-center justify-center border-t border-[#3e2046] py-4 md:flex-row md:justify-between">
           <p className="mb-4 text-center text-sm font-normal text-blue-gray-900 md:mb-0">
             &copy; {currentYear}{" "}
             <a href="/" className="hover:underline">

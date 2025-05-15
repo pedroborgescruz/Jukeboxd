@@ -11,7 +11,7 @@ export default function heroSection() {
       className="relative w-[100%]">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={{ backgroundImage: "url(https://igormiranda.com.br/wp-content/uploads/2023/07/secos-e-molhados-1973-album-arte.jpg)" }}></div>
+        style={{ backgroundImage: "url(https://images.squarespace-cdn.com/content/v1/5ab91f0fe17ba31599313b09/1582169435029-UQKFLRGHQNOMPWKTIFYS/00b.png)" }}></div>
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.8)_100%)] " />
 
@@ -27,11 +27,11 @@ export default function heroSection() {
         </div>
         <div style={{ color: "#ded4df" }} className="mx-auto max-w-2xl py-20 sm:py-28 lg:py-32">
           <div className="text-center">
-            <h1 className="text-5xl tracking-tight font-bold text-balance text-white sm:text-7xl">
+            <h1 className="text-5xl tracking-tight font-semibold text-balance text-white sm:text-7xl">
               Unleash the music critic in you
             </h1>
             <p className="mt-6 text-lg text-white sm:text-xl/8">
-              Rate albums you have listened. Track some to stream. <br /> Tell the world what's good.
+              Jukeboxd is an open source community where you can rate albums you have listened, track some to stream, and tell the world what's good.
             </p>
           </div>
         </div>
