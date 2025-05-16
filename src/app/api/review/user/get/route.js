@@ -4,9 +4,8 @@ import { connect } from '@/lib/mongodb/mongoose';
 export const POST = async (req) => {
   try {
     await connect();
-
+    
     const data = await req.json();
-
     const reviews = await Review.find({ user: data.userId }).sort({
       createdAt: -1,
     });

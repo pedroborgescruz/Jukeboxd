@@ -3,14 +3,16 @@ import AlbumGridBox from '@/components/albumGridBox';
 
 export default async function UserPage({ params }) {
   let data = null;
-  // Fetch user data
   try {
+    // Fetch user data
     const result = await fetch(process.env.NEXT_PUBLIC_URL + '/api/user/get', {
       method: 'POST',
       body: JSON.stringify({ username: params.username }),
       cache: 'no-store',
     });
     data = await result.json();
+
+    // Fetch user reviews
     const userReviews = await fetch(process.env.NEXT_PUBLIC_URL + '/api/review/user/get', {
       method: 'POST',
       body: JSON.stringify({ userId: data._id }),
