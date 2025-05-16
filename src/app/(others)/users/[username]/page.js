@@ -2,7 +2,9 @@ import FollowButton from '@/components/followButton';
 import AlbumGridBox from '@/components/albumGridBox';
 
 export default async function UserPage({ params }) {
+
   let data = null;
+
   try {
     // Fetch user data
     const result = await fetch(process.env.NEXT_PUBLIC_URL + '/api/user/get', {
@@ -18,12 +20,14 @@ export default async function UserPage({ params }) {
       body: JSON.stringify({ userId: data._id }),
       cache: 'no-store',
     });
-    data.posts = await userReviews.json();
+
+    // Assign new property called `reviews` inside the existing data object.
+    data.reviews = await userReviews.json();
   } catch (error) {
     console.error('Failed to fetch post', error);
   }
   
-return (
+  return (
     <div className='p-8 max-w-5xl mx-auto min-h-screen text-white'>
       {!data && <h2 className='text-center mt-5 text-lg'>User not found</h2>}
 
