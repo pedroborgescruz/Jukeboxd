@@ -2,7 +2,8 @@ import FollowButton from '@/components/followButton';
 import AlbumGridBox from '@/components/albumGridBox';
 import Feed from '@/components/feed';
 
-export default async function UserPage({ params }) {
+export default async function UserPage(props) {
+  const { params } = props;
 
   let data = null;
   let reviews = null;
@@ -18,10 +19,12 @@ export default async function UserPage({ params }) {
     console.error('Failed to fetch user', error);
   }
 
+  console.log("User: ", data._id);
+
   try {    // Fetch user reviews.
     const userReviews = await fetch(process.env.NEXT_PUBLIC_URL + '/api/review/user/get', {
       method: 'POST',
-      body: JSON.stringify({ userId: data._id }),
+      body: JSON.stringify({ user: data._id }),
       cache: 'no-store',
     });
 
@@ -30,15 +33,15 @@ export default async function UserPage({ params }) {
   } catch (error) {
     console.error('Failed to fetch reviews', error);
   }
-  
+
+  console.log(reviews);
+
   return (
     <div className='p-8 max-w-5xl mx-auto min-h-screen text-white'>
       {!data && <h2 className='text-center mt-5 text-lg'>User not found</h2>}
-
       {data && (
         // Use CSS Grid for the two-column layout
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'> {/* md:grid-cols-3 creates a 2/3 | 1/3 split on medium screens and up */}
-
+        (<div className='grid grid-cols-1 md:grid-cols-3 gap-8'> {/* md:grid-cols-3 creates a 2/3 | 1/3 split on medium screens and up */}
           {/* Left Column - User Profile Details */}
           <div className='md:col-span-2 space-y-6'> 
 
@@ -110,7 +113,6 @@ export default async function UserPage({ params }) {
               </div>
             </div>
           </div>
-
           {/* Right Column - Sidebar Content (Mimicking Image) */}
           <div className='md:col-span-1 space-y-6'> 
             {/* Around the Web Section */}
@@ -186,7 +188,7 @@ export default async function UserPage({ params }) {
              </div>
 
           </div>
-        </div>
+        </div>)
       )}
     </div>
   );

@@ -6,7 +6,7 @@ export const POST = async (req) => {
     await connect();
     
     const data = await req.json();
-    const reviews = await Review.find({ user: data.userId }).sort({
+    const reviews = await Review.find({ user: data._id }).sort({
       createdAt: -1,
     });
 
