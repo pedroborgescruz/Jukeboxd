@@ -1,20 +1,24 @@
 import FollowButton from '@/components/followButton';
 import AlbumGridBox from '@/components/albumGridBox';
+import Feed from '@/components/feed';
 
 export default async function UserPage({ params }) {
 
   let data = null;
+  let reviews = null;
 
-  try {
-    // Fetch user data
+  try {   // Fetch user data.
     const result = await fetch(process.env.NEXT_PUBLIC_URL + '/api/user/get', {
       method: 'POST',
       body: JSON.stringify({ username: params.username }),
       cache: 'no-store',
     });
     data = await result.json();
+  } catch (error) {
+    console.error('Failed to fetch user', error);
+  }
 
-    // Fetch user reviews
+  try {    // Fetch user reviews.
     const userReviews = await fetch(process.env.NEXT_PUBLIC_URL + '/api/review/user/get', {
       method: 'POST',
       body: JSON.stringify({ userId: data._id }),
@@ -22,9 +26,9 @@ export default async function UserPage({ params }) {
     });
 
     // Assign new property called `reviews` inside the existing data object.
-    data.reviews = await userReviews.json();
+    reviews = await userReviews.json();
   } catch (error) {
-    console.error('Failed to fetch post', error);
+    console.error('Failed to fetch reviews', error);
   }
   
   return (
@@ -36,10 +40,9 @@ export default async function UserPage({ params }) {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'> {/* md:grid-cols-3 creates a 2/3 | 1/3 split on medium screens and up */}
 
           {/* Left Column - User Profile Details */}
-          <div className='md:col-span-2 space-y-6'> {/* Add vertical space between sections */}
+          <div className='md:col-span-2 space-y-6'> 
 
             {/* Profile Header */}
-            {/* Adjusted padding slightly to fit within the grid column */}
             <div className='flex justify-between items-center pb-6 border-b border-gray-700 flex-wrap'>
               {/* Left Side: Avatar + Info */}
               <div className='flex items-center space-x-4'>
@@ -85,7 +88,6 @@ export default async function UserPage({ params }) {
             </div>
 
             {/* Favorite Albums Section */}
-            {/* Removed p-6, space-y on parent handles spacing */}
             <div>
               <h3 className='text-xl font-semibold mb-4'>My Favorite Albums</h3>
                {/* Ensure data.favoriteAlbums is the correct data for this component */}
@@ -103,12 +105,8 @@ export default async function UserPage({ params }) {
               <h3 className='text-xl font-semibold mb-4'>Recent Reviews</h3>
               <div className='text-gray-300'>
                 <div className='border-b border-gray-700 pb-4 mb-4 last:border-b-0 last:mb-0'>
-                   <p className='font-semibold'>Album Title Here</p>
-                   <p className='text-sm text-gray-400'>Rating: X/10</p>
-                   <p className='mt-2'>Review text goes here...</p>
+                  <Feed data={reviews}/>
                 </div>
-                {/* Add more reviews */}
-                <div>No recent reviews yet.</div>
               </div>
             </div>
           </div>
