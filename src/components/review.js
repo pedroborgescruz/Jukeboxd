@@ -5,7 +5,7 @@ import Icons from './icons';
 
 export default function Review({review}) {
     return (
-     <div className='flex p-3 border-b border-[#441c4c] w-130'>
+     <div className='flex p-3 border-b border-[#441c4c] w-160'>
       <Link href={`/users/${review?.username}`}>
         <img
           src={review?.profileImg}
@@ -20,7 +20,6 @@ export default function Review({review}) {
               {review?.name}
             </h4>
             <span className='text-xs truncate text-gray-400 max-w-32'>@{review?.username}</span>
-            {/* add dot space here */}
             <span className='text-xl text-gray-500'>·</span>
             <span className='text-xs text-gray-600 flex-1 truncate max-w-32'>
               {moment(review?.createdAt).fromNow()}

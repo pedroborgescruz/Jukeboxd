@@ -8,6 +8,7 @@ export default function Input() {
     const [text, setText] = useState('');
     const [postLoading, setPostLoading] = useState(false);
 
+    // When post button is hit, create post and reload current screen.
     const handleSubmit = async () => {
 
         setPostLoading(true);
@@ -30,12 +31,13 @@ export default function Input() {
         location.reload();
     };
 
+    // If no user currently signed in, don't display user input.
     if (!isSignedIn || !isLoaded) {
         return null;
     }
 
     return (
-        <div className='flex border-b border-[#441c4c] p-3 mb-5 space-x-3 w-130'>
+        <div className='flex border-b border-[#441c4c] p-3 mb-5 space-x-3 w-160'>
             <img
             src={user.imageUrl}
             alt='user-img'
