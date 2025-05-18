@@ -19,8 +19,6 @@ export default async function UserPage(props) {
     console.error('Failed to fetch user', error);
   }
 
-  console.log("User: ", data._id);
-
   try {    // Fetch user reviews.
     const userReviews = await fetch(process.env.NEXT_PUBLIC_URL + '/api/review/user/get', {
       method: 'POST',
@@ -33,8 +31,6 @@ export default async function UserPage(props) {
   } catch (error) {
     console.error('Failed to fetch reviews', error);
   }
-
-  console.log(reviews);
 
   return (
     <div className='p-8 max-w-5xl mx-auto min-h-screen text-white'>
