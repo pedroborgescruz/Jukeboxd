@@ -28,7 +28,7 @@ export default function heroSection() {
         <div style={{ color: "#ded4df" }} className="mx-auto max-w-2xl py-20 sm:py-28 lg:py-32">
           <div className="text-center">
             <h1 className="text-5xl tracking-tight font-semibold text-balance text-white sm:text-7xl">
-              Unleash the music critic in you
+              Unleash the music critic within you
             </h1>
             <p className="mt-6 text-lg text-white sm:text-xl/8">
               Jukeboxd is an open source community where you can rate albums you have listened, track some to stream, and tell the world what's good.
