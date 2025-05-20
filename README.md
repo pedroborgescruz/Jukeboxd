@@ -1,5 +1,7 @@
 <a id="readme-top"></a>
 
+<!-- NOTE: Explore MusicBrainz Library for music data. -->
+
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
