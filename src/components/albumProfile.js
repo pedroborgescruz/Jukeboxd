@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import {Tooltip} from "@heroui/react";
 
-export default function Album() {
+export default function Album({ cover, title, artist, year, label }) {
     return (
         <div className="h-full py-4">
             <Card className="mt-20 ml-15 flex flex-col items-center">
@@ -49,24 +49,23 @@ export default function Album() {
                     </div>
                 </Tooltip>
                 </div>
-
                 {/* Album stats section end */}
                 <Image
                     alt="Card background"
                     className="object-cover rounded-xl mt-5 mb-5 border border-gray-700"
-                    src="https://media.pitchfork.com/photos/65a6ccaa37e7c24b108f0e09/1:1/w_320,c_limit/Adrianne-Lenker-Bright-Future.jpg"
+                    src={cover}
                     width={270}
                 />
                 </CardBody>
 
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">        
-                <small className="text-gray-500 mb-1 ">2024</small>
+                <small className="text-gray-500 mb-1 ">{year}</small>
                 <p className="text-tiny font-bold uppercase text-jukeboxd">
-                    Bright Future</p>
+                    {title}</p>
                 <h4 className="text-large text-gray-300">
-                    by <a className="underline" href="/artists/alenker">Adrianne Lenker</a>
+                    by <a className="underline" href="/artists/alenker">{artist}</a>
                 </h4>
-                <small className="text-gray-500">Label: 4AD</small>
+                <small className="text-gray-500">Label: {label}</small>
                 </CardHeader>
             </Card>
         </div>
