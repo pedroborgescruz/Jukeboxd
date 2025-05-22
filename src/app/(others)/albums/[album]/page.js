@@ -8,7 +8,7 @@ export default async function App(props) {
   const album_id = params.album;
   let info_res, cover_res, info, cover, album_data;
 
-  // Fetch album info with MusicBrainz API
+  { /* Fetch album info with MusicBrainz API */ }
   try {
     // Get album info (name, artist, label, release year)
     info_res = await fetch(('https://musicbrainz.org/ws/2/release/' + album_id + '?inc=artist-credits+labels'), {
