@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 const reviewSchema = new mongoose.Schema(
   {
-    album: {   // ID for the album associated to the review.
+    albumId: {   // ID for the album associated to the review.
       type: String,
     },
     text: {

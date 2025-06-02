@@ -7,15 +7,16 @@ export const POST = async (req) => {
     try {
       await connect();
       const data = await req.json();
-      console.log('Received data in /api/review/create:', data); // <-- ADD THIS LINE
+      console.log('Received data in /api/review/create:', data);
   
       if (!user || user.publicMetadata.userMongoId !== data.userMongoId) {
-        console.log('Clerk user object:', user); // Good to log this too for the auth check
+        console.log('Clerk user object:', user);
         console.log('Data for auth check - userMongoId:', data.userMongoId);        return new Response('Unauthorized', {
           status: 401,
         });
       }
       const newReview = await Review.create({
+        albumId: data.albumId,
         user: data.userMongoId,
         name: data.name,
         username: data.username,

@@ -3,7 +3,7 @@
 import { useUser } from "@clerk/nextjs";
 import { useRef, useState, useEffect } from 'react';
 
-export default function Input() {
+export default function Input({album_id}) {
     const { user, isSignedIn, isLoaded } = useUser();
     const [text, setText] = useState('');
     const [postLoading, setPostLoading] = useState(false);
@@ -19,6 +19,7 @@ export default function Input() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
+            albumId: album_id,
             userMongoId: user.publicMetadata.userMongoId,
             name: user.fullName,
             username: user.username,

@@ -93,7 +93,7 @@ export default async function App(props) {
           <small className="text-gray-500">POPULAR REVIEWS</small>
         </div>
         <div className="ml-10 space-y-4">
-          <Input />
+          <Input album_id={album_id}/>
           <Feed data={data} />
         </div>
       </div>
