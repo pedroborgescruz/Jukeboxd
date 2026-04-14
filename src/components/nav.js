@@ -27,7 +27,7 @@ const user = {
 
 const navigation = [
   { name: 'New Music', href: '#', current: true },
-  { name: 'Artists', href: '#', current: false },
+  { name: 'Artists', href: '/artists', current: false },
   { name: 'Playlists', href: '#', current: false },
 ]
 

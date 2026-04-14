@@ -50,12 +50,21 @@ export default function Album({ cover, title, artist, year, label }) {
                 </Tooltip>
                 </div>
                 {/* Album stats section end */}
-                <Image
-                    alt="Card background"
-                    className="object-cover rounded-xl mt-5 mb-5 border border-gray-700"
-                    src={cover}
-                    width={270}
-                />
+                {cover ? (
+                    <Image
+                        alt="Album cover"
+                        className="object-cover rounded-xl mt-5 mb-5 border border-gray-700"
+                        src={cover}
+                        width={270}
+                    />
+                ) : (
+                    <div
+                        className="w-[270px] h-[270px] mt-5 mb-5 rounded-xl border border-gray-700 bg-gray-800/40 flex items-center justify-center text-xs text-gray-500 text-center px-4"
+                        aria-hidden
+                    >
+                        No cover art
+                    </div>
+                )}
                 </CardBody>
 
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">        
