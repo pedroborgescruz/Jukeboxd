@@ -84,6 +84,7 @@ export async function fetchArtistProfile(artistRef, param) {
   if (artistRef.provider === "spotify") {
     const artist = await fetchSpotifyArtist(artistRef.id);
     if (artist) {
+      console.log("[fetchArtistProfile] successful retrieval of artist's info")
       return {
         artistRef,
         name: artist.name,
@@ -93,7 +94,7 @@ export async function fetchArtistProfile(artistRef, param) {
       };
     }
 
-    console.warn("Spotify artist fetch failed, falling back to MusicBrainz");
+    console.warn("[fetchArtistProfile] Spotify API failed, falling back to MB");
     const mbRef = await resolveMusicBrainzRef(param);
     if (!mbRef) return null;
     return fetchArtistProfile(mbRef, param);

@@ -88,7 +88,7 @@ async function spotifyFetch(urlOrPath) {
 
     if (!res.ok) {
       console.error(
-        "Spotify API request failed:",
+        "[spotifyFetch] Spotify API request failed:",
         res.status,
         urlOrPath.startsWith("http") ? urlOrPath : `${SPOTIFY_API}${urlOrPath}`,
         await res.text()
@@ -169,7 +169,7 @@ export async function fetchSpotifyAlbum(albumId) {
 export async function fetchSpotifyArtistAlbums(artistId, maxAlbums = 80) {
   const market = spotifyMarket();
   const collected = [];
-  let nextUrl = `/artists/${artistId}/albums?include_groups=album,single&market=${market}&limit=10`;
+  let nextUrl = `/artists/${artistId}/albums?include_groups=album&market=${market}&limit=10`;
 
   while (nextUrl && collected.length < maxAlbums * 3) {
     const data = await spotifyFetch(nextUrl);
