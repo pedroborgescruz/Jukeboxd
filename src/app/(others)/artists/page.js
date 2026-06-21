@@ -1,65 +1,5 @@
-const ARTIST_SUGGESTIONS = [
-  {
-    name: "Linkin Park",
-    genre: "Alternative Rock",
-    reason: "Big hooks, high energy, and iconic 2000s records.",
-  },
-  {
-    name: "Taylor Swift",
-    genre: "Pop",
-    reason: "Strong songwriting and a massive range of eras.",
-  },
-  {
-    name: "The Beatles",
-    genre: "Rock",
-    reason: "A perfect starting point for classic albums.",
-  },
-  {
-    name: "Coldplay",
-    genre: "Alternative Pop",
-    reason: "Melodic songs that are easy to revisit often.",
-  },
-  {
-    name: "Radiohead",
-    genre: "Alternative",
-    reason: "Inventive production and deeply rewarding records.",
-  },
-  {
-    name: "Bad Bunny",
-    genre: "Latin Urban",
-    reason: "Modern reggaeton and pop with standout album runs.",
-  },
-  {
-    name: "Daft Punk",
-    genre: "Electronic",
-    reason: "Polished dance records with timeless production.",
-  },
-  {
-    name: "J. Cole",
-    genre: "Hip-Hop",
-    reason: "Thoughtful bars and consistently strong projects.",
-  },
-  {
-    name: "SZA",
-    genre: "R&B",
-    reason: "Emotional writing with modern R&B production.",
-  },
-  {
-    name: "Tame Impala",
-    genre: "Psychedelic Pop",
-    reason: "Dreamy textures and infectious grooves.",
-  },
-  {
-    name: "Arctic Monkeys",
-    genre: "Indie Rock",
-    reason: "Sharp lyricism and great progression across albums.",
-  },
-  {
-    name: "Kendrick Lamar",
-    genre: "Hip-Hop",
-    reason: "Conceptual albums that reward full listens.",
-  },
-];
+import { artistHref } from "@/lib/artistSlug";
+import { ARTIST_SUGGESTIONS } from "./suggestions";
 
 function shuffle(list) {
   const copy = [...list];
@@ -88,7 +28,7 @@ export default function ArtistsPage() {
           {artists.map((artist) => (
             <a
               key={artist.name}
-              href={`/artists/${encodeURIComponent(artist.name)}`}
+              href={artistHref(artist.name)}
               className="rounded-xl border border-[#3e2046] bg-[#1c0f28] p-5 transition hover:-translate-y-0.5 hover:border-[#c8ef05] hover:shadow-lg"
             >
               <p className="text-xs uppercase tracking-wide text-[#c8ef05]">

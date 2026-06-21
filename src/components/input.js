@@ -1,7 +1,8 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
-import { useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
+import { createReview } from '@/remoting/reviews';
 
 export default function Input({album_id}) {
     const { user, isSignedIn, isLoaded } = useUser();
@@ -13,19 +14,13 @@ export default function Input({album_id}) {
 
         setPostLoading(true);
         
-        const response = await fetch('/api/review/create', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            albumId: album_id,
-            userMongoId: user.publicMetadata.userMongoId,
-            name: user.fullName,
-            username: user.username,
-            text,
-            profileImg: user.imageUrl,
-          }),
+        await createReview({
+          albumId: album_id,
+          userMongoId: user.publicMetadata.userMongoId,
+          name: user.fullName,
+          username: user.username,
+          text,
+          profileImg: user.imageUrl,
         });
         setPostLoading(false);
         setText('');

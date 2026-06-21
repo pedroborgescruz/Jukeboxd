@@ -2,18 +2,16 @@
 
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
+import { followUser } from '@/remoting/users';
 
 export default function FollowButton({ user: userFromProfilePage }) {
   const router = useRouter();
   const { user } = useUser();
   const handleFollow = async () => {
     try {
-      const res = await fetch('/api/user/follow', {
-        method: 'POST',
-        body: JSON.stringify({
-          userProfileId: userFromProfilePage._id,
-          userWhofollowsId: user.publicMetadata.userMongoId,
-        }),
+      const res = await followUser({
+        userProfileId: userFromProfilePage._id,
+        userWhofollowsId: user.publicMetadata.userMongoId,
       });
 
       if (res.status === 200) {

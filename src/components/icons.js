@@ -9,6 +9,7 @@ import {
 import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
+import { likeReview, deleteReview } from '@/remoting/reviews';
 
 export default function Icons({ review, onCommentClick }) {
   const [isLiked, setIsLiked] = useState(false);
@@ -21,13 +22,7 @@ export default function Icons({ review, onCommentClick }) {
       return router.push('/sign-in');
     }
 
-    const res = await fetch('/api/review/like', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ postId: review._id }),
-    });
+    const res = await likeReview(review._id);
 
     if (res.ok) {
       const userId = user.publicMetadata.userMongoId;
@@ -46,13 +41,7 @@ export default function Icons({ review, onCommentClick }) {
   const deletePost = async () => {
     if (window.confirm('Are you sure you want to delete this review?')) {
       if (user?.publicMetadata.userMongoId === review.user) {
-        const res = await fetch('/api/review/delete', {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ reviewId: review._id }),
-        });
+        const res = await deleteReview(review._id);
 
         if (res.status === 200) {
           location.reload();

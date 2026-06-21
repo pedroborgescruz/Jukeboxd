@@ -31,8 +31,8 @@ export default function DiscographySection({ items }) {
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-6">
         {slice.map((item) => (
-          <div key={item.releaseId} className="flex gap-4 items-center">
-            <Link href={`/albums/${item.releaseId}`}>
+          <div key={item.releaseGroupId} className="flex gap-4 items-center">
+            <Link href={`/albums/${item.releaseGroupId}`}>
               <img
                 src={item.coverUrl}
                 className="w-16 h-16 object-cover border border-gray-600 rounded"
@@ -41,7 +41,7 @@ export default function DiscographySection({ items }) {
             </Link>
             <div>
               <p className="text-primary font-bold text-sm">
-                <Link href={`/albums/${item.releaseId}`}>{item.title}</Link>
+                <Link href={`/albums/${item.releaseGroupId}`}>{item.title}</Link>
               </p>
               <p className="text-gray-500 text-sm">{item.dateLabel}</p>
             </div>

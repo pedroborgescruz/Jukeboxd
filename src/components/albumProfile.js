@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import {Tooltip} from "@heroui/react";
+import { artistHref } from "@/lib/artistSlug";
 
 export default function Album({ cover, title, artist, year, label }) {
     return (
@@ -72,7 +73,7 @@ export default function Album({ cover, title, artist, year, label }) {
                 <p className="text-tiny font-bold uppercase text-jukeboxd">
                     {title}</p>
                 <h4 className="text-large text-gray-300">
-                    by <a className="underline" href="/artists/alenker">{artist}</a>
+                    by <a className="underline" href={artistHref(artist)}>{artist}</a>
                 </h4>
                 <small className="text-gray-500">Label: {label}</small>
                 </CardHeader>

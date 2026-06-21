@@ -1,36 +1,14 @@
 import FollowButton from '@/components/followButton';
 import AlbumGridBox from '@/components/albumGridBox';
 import Feed from '@/components/feed';
+import { getUserByUsername } from '@/remoting/users';
+import { getUserReviews } from '@/remoting/reviews';
 
-export default async function UserPage(props) {
-  const { params } = props;
+export default async function UserPage({ params }) {
+  const { username } = await params;
 
-  let data = null;
-  let reviews = null;
-
-  try {   // Fetch user data.
-    const result = await fetch(process.env.NEXT_PUBLIC_URL + '/api/user/get', {
-      method: 'POST',
-      body: JSON.stringify({ username: params.username }),
-      cache: 'no-store',
-    });
-    data = await result.json();
-  } catch (error) {
-    console.error('Failed to fetch user', error);
-  }
-
-  try {    // Fetch user reviews.
-    const userReviews = await fetch(process.env.NEXT_PUBLIC_URL + '/api/review/user/get', {
-      method: 'POST',
-      body: JSON.stringify({ user: data._id }),
-      cache: 'no-store',
-    });
-
-    // Assign new property called `reviews` inside the existing data object.
-    reviews = await userReviews.json();
-  } catch (error) {
-    console.error('Failed to fetch reviews', error);
-  }
+  const data = await getUserByUsername(username);
+  const reviews = data?._id ? await getUserReviews(data._id) : null;
 
   return (
     <div className='p-8 max-w-5xl mx-auto min-h-screen text-white'>
