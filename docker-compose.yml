@@ -1,0 +1,35 @@
+services:
+  # --- THE DATABASE ---
+  db:
+    image: postgres:16-alpine
+    container_name: jukeboxd_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: jukeboxd_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # --- YOUR NEXT.JS APP ---
+  web:
+    build: .
+    container_name: jukeboxd_web_app
+    ports:
+      - "3000:3000"
+    environment:
+      # Overrides .env.local inside the container so it talks to the 'db' container
+      DATABASE_URL: postgres://myuser:mysecretpassword@db:5432/jukeboxd_dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - db
+    # Prisma syncs your schema to the database first, then Next.js starts
+    command: sh -c "npx prisma db push && npm run dev"
+
+volumes:
+  postgres_data:
