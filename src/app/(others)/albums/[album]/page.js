@@ -3,8 +3,7 @@ import Feed from "@/components/feed";
 import Album from "@/components/albumProfile";
 import Input from "@/components/input";
 import AlbumActions from "@/components/albumActions";
-import { fetchAlbumInfo } from "@/remoting/musicbrainz";
-import { fetchReleaseCoverUrl } from "@/remoting/coverArt";
+import { fetchAlbumPageData } from "@/remoting/catalog";
 import { getAllReviews } from "@/remoting/reviews";
 
 export const revalidate = 86400;
@@ -16,9 +15,8 @@ export default async function App({ params }) {
     notFound();
   }
 
-  const [albumInfo, coverUrl, data] = await Promise.all([
-    fetchAlbumInfo(album_id),
-    fetchReleaseCoverUrl(album_id),
+  const [albumInfo, data] = await Promise.all([
+    fetchAlbumPageData(album_id),
     getAllReviews(),
   ]);
 
@@ -26,23 +24,15 @@ export default async function App({ params }) {
     notFound();
   }
 
-  const album_data = {
-    cover: coverUrl,
-    title: albumInfo.title,
-    artist: albumInfo.artist,
-    year: albumInfo.year,
-    label: albumInfo.label,
-  };
-
   return (
     <div className="grid grid-cols-12 gap-4 mb-20">
       <div className="col-span-3">
         <Album
-          cover={album_data.cover}
-          title={album_data.title}
-          artist={album_data.artist}
-          year={album_data.year}
-          label={album_data.label}
+          cover={albumInfo.coverUrl}
+          title={albumInfo.title}
+          artist={albumInfo.artist}
+          year={albumInfo.year}
+          label={albumInfo.label}
         />
       </div>
       <div className="col-span-3">

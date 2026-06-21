@@ -2,14 +2,14 @@ import DiscographySection from "@/components/discographySection";
 import Stats from "@/components/artistStats";
 import { loadArtistDiscography } from "../utils";
 
-export async function ArtistReleaseStats({ artistMbid }) {
-  const { discography } = await loadArtistDiscography(artistMbid);
+export async function ArtistReleaseStats({ artistRef, artistParam }) {
+  const { discography } = await loadArtistDiscography(artistRef, artistParam);
   return <Stats releaseCount={discography.length} />;
 }
 
-export async function ArtistHeroAndDiscography({ artistMbid }) {
+export async function ArtistHeroAndDiscography({ artistRef, artistParam }) {
   const { discography, heroBackgroundUrl, discographyItems } =
-    await loadArtistDiscography(artistMbid);
+    await loadArtistDiscography(artistRef, artistParam);
 
   return (
     <>
@@ -28,8 +28,7 @@ export async function ArtistHeroAndDiscography({ artistMbid }) {
         <div className="flex flex-col gap-6">
           {discography.length === 0 ? (
             <p className="text-sm text-gray-500">
-              No albums or EPs found for this artist in MusicBrainz (official
-              releases only).
+              No albums or singles found for this artist.
             </p>
           ) : (
             <DiscographySection items={discographyItems} />

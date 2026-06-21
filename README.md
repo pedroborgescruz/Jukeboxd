@@ -40,13 +40,16 @@ Create a `.env.local` file in the project root:
 touch .env.local
 ```
 
-Add the following variables:
+Add the following variables (see `.env.example` for the full list):
 
 ```env
-MONGODB_URI=
 NEXT_PUBLIC_URL=http://localhost:3000
-WEBHOOK_SECRET=
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+SPOTIFY_MARKET=US
 ```
+
+When Spotify credentials are set, artist and album pages use the Spotify Web API first and fall back to MusicBrainz. Without Spotify, MusicBrainz is used as before.
 
 If you are using Clerk locally, also add the Clerk keys used by your app setup.
 

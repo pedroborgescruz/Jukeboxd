@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { notFound, redirect } from "next/navigation";
 import User from "@/components/user";
 import { loadArtistProfile } from "../utils";
-import { isMbid } from "@/remoting/musicbrainz";
+import { isOpaqueCatalogId } from "@/remoting/catalog";
 import {
   ArtistHeroAndDiscography,
   ArtistDiscographySkeleton,
@@ -25,28 +25,31 @@ export default async function ArtistPage({ params }) {
     notFound();
   }
 
-  if (isMbid(artistParam) || artistParam !== profile.canonicalSlug) {
+  if (isOpaqueCatalogId(artistParam) || artistParam !== profile.canonicalSlug) {
     redirect(`/artists/${profile.canonicalSlug}`);
   }
 
-  const { artistMbid, artist, bio, subtitle } = profile;
+  const { artistRef, name, bio, subtitle, imageUrl } = profile;
 
   return (
     <div className="w-full min-h-screen flex">
       <div className="w-[20%] p-6 overflow-y-auto flex flex-col justify-between shrink-0">
         <div>
-          <User name={artist.name} imageUrl={null} subtitle={subtitle} />
+          <User name={name} imageUrl={imageUrl} subtitle={subtitle} />
           <div className="break-words max-w-full mt-10">
             <p className="text-sm text-jukeboxd whitespace-pre-wrap">{bio}</p>
           </div>
         </div>
         <Suspense fallback={<ArtistStatsSkeleton />}>
-          <ArtistReleaseStats artistMbid={artistMbid} />
+          <ArtistReleaseStats artistRef={artistRef} artistParam={artistParam} />
         </Suspense>
       </div>
 
       <Suspense fallback={<ArtistDiscographySkeleton />}>
-        <ArtistHeroAndDiscography artistMbid={artistMbid} />
+        <ArtistHeroAndDiscography
+          artistRef={artistRef}
+          artistParam={artistParam}
+        />
       </Suspense>
     </div>
   );
