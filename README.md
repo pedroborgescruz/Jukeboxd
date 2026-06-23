@@ -1,8 +1,21 @@
 # Jukeboxd
 
-Your personal music journal inspired by Letterboxd.
+Your personal music journal, inspired by Letterboxd.
 
-![Jukeboxd preview](https://i.imgur.com/uGIML9F.jpeg)
+<img width="1512" height="728" alt="image" src="https://github.com/user-attachments/assets/74d90e3e-833f-4d50-9002-aa4f560eed08" />
+
+<img width="1510" height="726" alt="image" src="https://github.com/user-attachments/assets/33533d4b-5363-4412-8f03-2678536e0483" />
+
+<img width="1512" height="731" alt="image" src="https://github.com/user-attachments/assets/225f7f44-30cf-4b54-a830-0a0e1ee36684" />
+
+<img width="1512" height="734" alt="image" src="https://github.com/user-attachments/assets/78131efa-9274-4a9b-ac93-60954c21f95c" />
+
+<img width="1512" height="726" alt="image" src="https://github.com/user-attachments/assets/b2ea1224-78fd-4352-a7ba-829aa42227d2" />
+
+<img width="1512" height="733" alt="image" src="https://github.com/user-attachments/assets/e5fff873-a5ff-4f87-a4a0-d26ccb9f392a" />
+
+<img width="1511" height="728" alt="image" src="https://github.com/user-attachments/assets/aeb82db0-3a8a-4bf2-896e-510785e929ca" />
+
 
 Jukeboxd is a social-first app for people who want to track what they listen to, write better music reviews, and discover albums through other listeners instead of recommendation algorithms.
 
