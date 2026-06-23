@@ -28,7 +28,7 @@ npm install
 
 ### 3) Configure environment variables
 
-Create `.env.local` in the project root:
+Create `.env` in the project root:
 
 ```env
 MONGODB_URI=
@@ -49,14 +49,14 @@ Visit `http://localhost:3000`.
 ## Branch and Commit Workflow
 
 1. Create a branch from `main`:
-   ```bash
+  ```bash
    git checkout -b feature/short-description
-   ```
+  ```
 2. Make your changes
 3. Run checks:
-   ```bash
+  ```bash
    npm run lint
-   ```
+  ```
 4. Commit with a clear message
 5. Push and open a pull request
 
@@ -64,11 +64,11 @@ Visit `http://localhost:3000`.
 
 Before opening a PR, verify:
 
-- [ ] The change is scoped to one concern
-- [ ] Lint passes locally (`npm run lint`)
-- [ ] New behavior is documented (README/docs/comments as needed)
-- [ ] Screenshots or short videos are included for UI changes
-- [ ] Any required follow-up tasks are called out
+- The change is scoped to one concern
+- Lint passes locally (`npm run lint`)
+- New behavior is documented (README/docs/comments as needed)
+- Screenshots or short videos are included for UI changes
+- Any required follow-up tasks are called out
 
 In the PR description, include:
 

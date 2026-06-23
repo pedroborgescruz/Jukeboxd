@@ -20,7 +20,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      # Overrides .env.local inside the container so it talks to the 'db' container
+      # Overrides .env inside the container so it talks to the 'db' container
       DATABASE_URL: postgres://myuser:mysecretpassword@db:5432/jukeboxd_dev
     volumes:
       - .:/app

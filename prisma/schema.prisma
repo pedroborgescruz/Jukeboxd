@@ -1,52 +1,73 @@
-/*
-Jukeboxd DB Models
-Database models to capture existing relations and entities that  
-exist in the Jukeboxd application. 
-*/
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
 model User {
-  id        String   @id @default(uuid())  // Changed from auto() / @db.ObjectId
+  id        String   @id // No default uuid() -> This will be the ID string passed from Clerk
   email     String   @unique
   name      String?
   createdAt DateTime @default(now())
+  
   reviews   Review[]
+  
+  // Self-referencing many-to-many relations for following system
+  followers Follows[] @relation("following")
+  following Follows[] @relation("follower")
+}
+
+// Join table for User-to-User follow relationship
+model Follows {
+  followerId  String
+  followingId String
+  follower    User   @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  following   User   @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@id([followerId, followingId])
 }
 
 model Album {
-  id        String   @id @default(uuid())
-  title     String
-  year      Int
-  artistId  String                         // Removed @db.ObjectId
-  artist    Artist   @relation(fields: [artistId], references: [id])
-  songs     Song[]
+  id       String @id @default(uuid())
+  title    String
+  year     Int
+  artistId String
+  artist   Artist @relation(fields: [artistId], references: [id])
+  songs    Song[]
 }
 
 model Song {
-  id        String   @id @default(uuid())
-  title     String
-  length    Int      
-  albumId   String                         // Removed @db.ObjectId
-  album     Album    @relation(fields: [albumId], references: [id])
+  id      String @id @default(uuid())
+  title   String
+  length  Int
+  albumId String
+  album   Album  @relation(fields: [albumId], references: [id])
 }
 
 model Artist {
-  id        String   @id @default(uuid())
-  name      String
-  albums    Album[]
+  id     String  @id @default(uuid())
+  name   String
+  albums Album[]
 }
 
 model Review {
-  id        String   @id @default(uuid())  // Changed field 59 to string UUID if preferred
-  userId    String                         // Removed @db.ObjectId
-  user      User     @relation(fields: [userId], references: [id])
+  id         String   @id @default(uuid())
+  userId     String   
+  user       User     @relation(fields: [userId], references: [id])
+  
+  // Fixed: Restored missing fields required by your API routes
+  albumId    String
+  name       String
+  username   String
+  text       String
+  profileImg String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  // Storing like tracking as a primitive string array for simplified migration
+  likes      String[] @default([])
 }

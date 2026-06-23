@@ -34,10 +34,10 @@ npm install
 
 ### 2) Create your environment file
 
-Create a `.env.local` file in the project root:
+Create a `.env` file in the project root:
 
 ```bash
-touch .env.local
+touch .env
 ```
 
 Add the following variables (see `.env.example` for the full list):

@@ -4,9 +4,7 @@ import Album from "@/components/albumProfile";
 import Input from "@/components/input";
 import AlbumActions from "@/components/albumActions";
 import { fetchAlbumPageData } from "@/remoting/catalog";
-import { getAllReviews } from "@/remoting/reviews";
-
-export const revalidate = 86400;
+import { ReviewService } from "@/remoting/reviews"; // Import the new class
 
 export default async function App({ params }) {
   const { album: album_id } = await params;
@@ -15,9 +13,10 @@ export default async function App({ params }) {
     notFound();
   }
 
+  // Fetching data cleanly using the static class method
   const [albumInfo, data] = await Promise.all([
     fetchAlbumPageData(album_id),
-    getAllReviews(),
+    ReviewService.getAllReviews(album_id), 
   ]);
 
   if (!albumInfo) {

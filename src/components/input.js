@@ -3,28 +3,39 @@
 import { useUser } from "@clerk/nextjs";
 import { useState } from 'react';
 import { createReview } from '@/remoting/reviews';
+import { useRouter } from 'next/navigation'; // Added for smooth router refreshing
 
 export default function Input({album_id}) {
     const { user, isSignedIn, isLoaded } = useUser();
     const [text, setText] = useState('');
     const [postLoading, setPostLoading] = useState(false);
+    const router = useRouter(); // Hook to refresh server components smoothly
 
     // When post button is hit, create post and reload current screen.
     const handleSubmit = async () => {
+        if (text.trim() === '') return;
 
         setPostLoading(true);
         
-        await createReview({
-          albumId: album_id,
-          userMongoId: user.publicMetadata.userMongoId,
-          name: user.fullName,
-          username: user.username,
-          text,
-          profileImg: user.imageUrl,
-        });
-        setPostLoading(false);
-        setText('');
-        location.reload();
+        try {
+            await createReview({
+                albumId: album_id,
+                userMongoId: user?.publicMetadata?.userMongoId || user?.id, 
+                name: user?.fullName,
+                username: user?.username,
+                text: text, // FIXED: Changed reviewText to your state variable 'text'
+                profileImg: user?.imageUrl
+            });
+            
+            setText('');
+            // Smoothly tells the parent Server Component to re-fetch fresh data 
+            // from PostgreSQL without a harsh browser window white-flash reload
+            router.refresh(); 
+        } catch (error) {
+            console.error("Failed to submit review:", error);
+        } finally {
+            setPostLoading(false);
+        }
     };
 
     // If no user currently signed in, don't display user input.
@@ -51,7 +62,7 @@ export default function Input({album_id}) {
                 disabled={text.trim() === '' || postLoading}
                 className='bg-primary text-white px-4 py-1.5 rounded-full shadow-md hover:brightness-95 disabled:opacity-50'
                 onClick={handleSubmit}>
-                    Post
+                    {postLoading ? 'Posting...' : 'Post'}
                 </button>
             </div>           
         </div>
